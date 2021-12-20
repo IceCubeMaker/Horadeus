@@ -14,17 +14,38 @@ public class Character_movement : MonoBehaviour
     public float dst = 10;
 
     public Transform cam;
+    public Camera camera;
 
     public Animator animator;
+
+    // Returns whether or not the given position is in the game window
+    public bool isInWindow(Vector2 position)
+    {
+        return (position.x >= 0 & position.x <= Screen.width &
+                position.y >= 0 & position.y <= Screen.height);
+    }
 
     void Start()
     {
         //Fetch the Rigidbody from the GameObject with this script attached
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ; //Player can't tip over
+        camera = gameObject.GetComponentInChildren<Camera>();
     }
 
     private void Update() {
+        // Gets the cursor position relative to the game window
+        Vector2 cursorPosition = camera.ScreenToViewportPoint(Input.mousePosition);
+        // Scales the position properly
+        cursorPosition.x *= camera.scaledPixelWidth;
+        cursorPosition.y *= camera.scaledPixelHeight;
+
+        // Stops this function from running when the cursor isn't inside the game
+        if (!isInWindow(cursorPosition))
+        {
+            return;
+        }
+
         float mouseX = Input.GetAxis("Mouse X") * sensX;
         float mouseY = Input.GetAxis("Mouse Y") * sensY;
 
@@ -47,7 +68,18 @@ public class Character_movement : MonoBehaviour
     }
 
     void FixedUpdate()
-    {       
+    {
+        // Gets the cursor position relative to the game window
+        Vector2 cursorPosition = camera.ScreenToViewportPoint(Input.mousePosition);
+        // Scales the position properly
+        cursorPosition.x *= camera.scaledPixelWidth;
+        cursorPosition.y *= camera.scaledPixelHeight;
+
+        // Stops this function from running when the cursor isn't inside the game
+        if (!isInWindow(cursorPosition))
+        {
+            return;
+        }
 
         //make character smootly face camera
         Vector3 lookPos = (cam.position - transform.position) * -1; //-1 because want the back to face the cam. not the front
@@ -57,6 +89,7 @@ public class Character_movement : MonoBehaviour
 
         Vector3 cam_orientation = new Vector3(cam.forward.x, 0, cam.forward.z); //get camera orientation
         Vector3 m_Input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")); //Store user input as a input vector
+        m_Input.Normalize();
         Vector3 m_Movement = cam_orientation * m_Input.z + transform.right * m_Input.x;
         m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Speed * Time.fixedDeltaTime); //move character
 

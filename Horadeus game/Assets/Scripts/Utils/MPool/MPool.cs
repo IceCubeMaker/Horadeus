@@ -38,7 +38,7 @@ namespace MicroCrew.Utils {
         }
 
         public IPoolObject CreateNew(IPoolObject prefab) {
-            Debug.Log(prefab.GetGameObject() == null);
+            // Debug.Log(prefab.GetGameObject() == null);
             IPoolObject newInstance = MonoBehaviour.Instantiate(prefab.GetGameObject()).GetComponent<IPoolObject>();
             return newInstance;
         }

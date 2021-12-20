@@ -11,6 +11,8 @@ public class Map : MonoBehaviour {
 
     private Timer fishSpawnTimer;
 
+    private int fishCounter = 0;
+
     public void Init() {
         inst = this;
 
@@ -18,10 +20,11 @@ public class Map : MonoBehaviour {
     }
 
     public void InternalUpdate() {
-        if(fishSpawnTimer) {
+        if(fishSpawnTimer & fishCounter < 20) {
             fishSpawnTimer.AddFromNow();
 
             SpawnFish();
+            fishCounter++;
         }
     }
 
