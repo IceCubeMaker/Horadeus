@@ -2,28 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Game : MonoBehaviour {
+public class Game : Singleton<Game> {
 
-    public PlayerController player;
+	public static GD_Game data;
 
+	public HCamera mainCamera;
+
+	public Player player;
     public Map map;
 
-    private void InternalStart() {
-        player.Init();
-        map.Init();
-    }
+	public override void Init()
+	{
 
-    private void InternalUpdate() {
-        player.InternalUpdate();
-        map.InternalUpdate();
-    }
+	}
 
-    private void Start() {
-        InternalStart();
-    }
+	protected override void Shutdown()
+	{
 
-    private void Update() {
-        InternalUpdate();
-    }
+	}
+
+	public void StartGame()
+	{
+		GameDataManager.InitIfNeeded(null);
+		data = GameDataManager.inst.Load();
+
+		StartGameLogic();
+
+		HGameLoop.Update.Register(InternalUpdate);
+		HGameLoop.FixedUpdate.Register(InternalFixedUpdate);
+	}
+
+	private void StartGameLogic()
+	{
+		mainCamera.Init();
+
+		player.Init(mainCamera);
+		map.Init();
+	}
+
+	private void InternalUpdate()
+	{
+		player.InternalUpdate();
+		map.InternalUpdate();
+		mainCamera.InternalUpdate();
+	}
+
+	private void InternalFixedUpdate()
+    {
+		player.InternalFixedUpdate();
+	}
+
+	public void RestartLevel()
+	{
+		HSceneManager.ReloadScene();
+	}
 
 }
