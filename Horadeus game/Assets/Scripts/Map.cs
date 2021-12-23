@@ -29,8 +29,7 @@ public class Map : MonoBehaviour {
 
     private void SpawnFish() {
         Vector2 circlePos = Random.insideUnitCircle * 20f;
-        Vector3 pos = new Vector3(circlePos.x, 5f ,circlePos.y);
-
+        Vector3 pos = new Vector3(circlePos.x, 5f, circlePos.y);
         Fish fish = MPool.Get<Fish>();
         fish.transform.position = pos;
     }
