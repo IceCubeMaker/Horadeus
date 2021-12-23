@@ -22,7 +22,6 @@ public class Player : MonoBehaviour {
         SwitchCursorLock();
 
         arrowItem = inventory.GetItem(ItemType.Arrow);
-
         movement.Init(cam);
 
         currentWeapon.Equip(this);
@@ -50,7 +49,6 @@ public class Player : MonoBehaviour {
             if (Input.GetMouseButton(0))
             {
                 currentWeapon.UseHold();
-
                 playerCamera.SetZoomPercent(currentWeapon.charge / currentWeapon.maxChargeTime);
             }
 
