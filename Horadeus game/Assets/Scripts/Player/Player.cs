@@ -22,6 +22,7 @@ public class Player : MonoBehaviour {
         SwitchCursorLock();
 
         arrowItem = inventory.GetItem(ItemType.Arrow);
+        arrowItem.count = 50;
         movement.Init(cam);
 
         currentWeapon.Equip(this);
