@@ -27,7 +27,7 @@ public class Fish : Entity{
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         moveToSpots = GameObject.FindGameObjectsWithTag("FishNavLocation");//GameObject In Hierarchy
         agent.SetDestination(moveToSpots[rnd.Next(0,moveToSpots.Length)].transform.position);
-        agent.baseOffset = rnd.Next(1, 25); //Increase or lower to adjust hight fish fly
+        agent.baseOffset = rnd.Next(1, 10); //Increase or lower to adjust hight fish fly
     }
 
 
