@@ -13,6 +13,9 @@ public class Fish : Entity{
     System.Random rnd = new System.Random();
     [SerializeField] private GameObject[] moveToSpots; //This can be added too or taken away to have more areas to swim
     #endregion
+
+    bool isDead = false;
+
     public override Type GetPoolObjectType() {
         return typeof(Fish);
     }
@@ -28,9 +31,33 @@ public class Fish : Entity{
     }
 
 
+    //Detects collision with arrow
+    void OnCollisionEnter(Collision collision) {
+        if(collision.gameObject.name == "Arrow(Clone)"){
+            Debug.Log("Arrow hit");
+            isDead = true;
+        }
+    }
+
+
     private void Update()
     {
-        FindRandomSpot();
+
+        if (isDead == false) 
+        {
+            FindRandomSpot();
+        }
+        else
+        {
+            if (agent.enabled == true) { //make sure is only called once.
+            anim.SetBool("isDead", true);
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.useGravity = true;
+            agent.enabled = false;
+            }
+        }
+        
     }
     #endregion
 

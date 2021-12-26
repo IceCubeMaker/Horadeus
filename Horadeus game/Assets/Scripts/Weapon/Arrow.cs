@@ -9,16 +9,6 @@ public class Arrow : Projectile {
     // Used for customizing gravity for this object specifically
     private static float g_multiplier = 0.1f;
 
-    protected override void Interact(Collision c) {
-        base.Interact(c);
-
-        Fish fish = c.gameObject.GetComponent<Fish>();
-
-        if(fish != null) {
-            fish.GetComponent<Rigidbody>().useGravity = true; // Makes the fish fall
-        }
-    }
-
     public override Type GetPoolObjectType() {
         return typeof(Arrow);
     }
