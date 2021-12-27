@@ -71,7 +71,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   rb: {fileID: 4449014942611335200}
-  additionalGravity: 5
+  additionalGravity: 0
   refRotationDireciton: {x: 0, y: 0, z: 1}
   trailRend: {fileID: 4449014942611335214}
 --- !u!96 &4449014942611335214

@@ -7,7 +7,7 @@ public class Arrow : Projectile {
 
     // Multiplier for the force of gravity
     // Used for customizing gravity for this object specifically
-    private static float g_multiplier = 0.1f;
+    private static float g_multiplier = 0f;
 
     public override Type GetPoolObjectType() {
         return typeof(Arrow);
