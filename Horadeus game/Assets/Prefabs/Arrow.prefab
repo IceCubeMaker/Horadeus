@@ -74,6 +74,7 @@ MonoBehaviour:
   additionalGravity: 0
   refRotationDireciton: {x: 0, y: 0, z: 1}
   trailRend: {fileID: 4449014942611335214}
+  rigidBody: {fileID: 4449014942611335200}
 --- !u!96 &4449014942611335214
 TrailRenderer:
   serializedVersion: 2
@@ -192,8 +193,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.069113255, y: 0.08366132, z: 1.1002066}
-  m_Center: {x: 0.015443325, y: 0.008169293, z: 0.50010335}
+  m_Size: {x: 0.069113255, y: 0.08366132, z: 0.53}
+  m_Center: {x: 0, y: 0.008169293, z: 0.41}
 --- !u!1001 &4449014943506174024
 PrefabInstance:
   m_ObjectHideFlags: 0

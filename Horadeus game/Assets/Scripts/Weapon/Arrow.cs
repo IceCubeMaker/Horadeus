@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Arrow : Projectile {
 
+    public Rigidbody rigidBody;
+
     // Multiplier for the force of gravity
     // Used for customizing gravity for this object specifically
     private static float g_multiplier = 0f;
@@ -15,8 +17,16 @@ public class Arrow : Projectile {
 
     private void FixedUpdate()
     {
+
+
         Rigidbody rigidBody = gameObject.GetComponent<Rigidbody>();
         rigidBody.AddForce(Physics.gravity * rigidBody.mass * g_multiplier); // Adds the force of gravity
     }
 
+    void OnCollisionEnter(Collision other)
+    {
+        gameObject.transform.parent = other.transform;
+        rigidBody.isKinematic = true;
+        rigidBody.velocity = new Vector3(rigidBody.velocity.x , rigidBody.velocity.y , 0);
+    }
 }
