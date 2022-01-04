@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 8264913601521831359}
   - component: {fileID: 8264913601521831300}
   - component: {fileID: 8264913601521831299}
+  - component: {fileID: 1737736720186918183}
+  - component: {fileID: 4910031186534006302}
   m_Layer: 0
   m_Name: PlayerMovement
   m_TagString: Player
@@ -81,12 +83,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Speed: 6
   faceCamSpeed: 0.15
-  offsetInPlane: {x: 0.58, y: 0.63}
-  sensX: 200
-  sensY: 200
-  rotX: -70
-  rotY: 1977.4652
-  dst: 3.25
   animator: {fileID: 8264913601521831359}
 --- !u!54 &8264913601521831298
 Rigidbody:
@@ -168,7 +164,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.52, y: 1.04}
+  m_Size: {x: 0.64, y: 1.04}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -188,6 +184,122 @@ CapsuleCollider:
   m_Height: 1.1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &1737736720186918183
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264913601521831302}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.09
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &4910031186534006302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264913601521831302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e98750ffb2f8c45b9b9b87d59bfed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 851688acab6cfe54885fc649b6bb4c2f, type: 3}
+  - {fileID: 8300000, guid: 855d18e6ba9f01f44a572137fbc45a9d, type: 3}
+  - {fileID: 8300000, guid: 564dfb78e53a5e0479f425a773534d4d, type: 3}
+  - {fileID: 8300000, guid: 2c0237917b1ec91488d9339d2fb0801e, type: 3}
+  - {fileID: 8300000, guid: 2f613799fbc5fc24b92f7edeb04badd0, type: 3}
+  - {fileID: 8300000, guid: 7ae14a4779498644282380c315cb8eae, type: 3}
+  playSound: 0
 --- !u!1 &8264913601700730944
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +347,6 @@ MonoBehaviour:
   inventory: {fileID: 0}
   currentWeapon: {fileID: 0}
   movement: {fileID: 8264913601521831358}
-  bow: {fileID: 0}
   playerCamera: {fileID: 0}
 --- !u!1 &8264913603181096245
 GameObject:
