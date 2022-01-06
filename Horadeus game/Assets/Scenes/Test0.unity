@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.37311643, g: 0.38073903, b: 0.3587318, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731161, g: 0.3807387, b: 0.35873166, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6177,6 +6177,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 946998398}
     m_Modifications:
+    - target: {fileID: 1737736720186918183, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8264913601521831301, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6201,6 +6205,10 @@ PrefabInstance:
       propertyPath: currentWeapon
       value: 
       objectReference: {fileID: 218640172}
+    - target: {fileID: 8264913601700731006, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: clips.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8264913601700731007, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
       propertyPath: m_RootOrder
       value: 1
