@@ -48,17 +48,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        //make character smootly face camera
-        Vector3 lookPos = (playerCamera.cameraTransform.position - transform.position) * -1; //-1 because want the back to face the cam. not the front
-        lookPos.y = 0;
-        Quaternion rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, faceCamSpeed);
-
         Vector3 cam_orientation = new Vector3(playerCamera.cameraTransform.forward.x, 0, playerCamera.cameraTransform.forward.z); //get camera orientation
         Vector3 m_Input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")); //Store user input as a input vector
         m_Input.Normalize();
         Vector3 m_Movement = cam_orientation * m_Input.z + transform.right * m_Input.x;
+
+        if (m_Input.z > 0) {} else {
+        //make sprite face camera when walking
+        Vector3 lookPos = (playerCamera.cameraTransform.position - transform.position) * -1; //-1 because want the back to face the cam. not the front
+        lookPos.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, faceCamSpeed);
+        }
+        
         m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Speed * Time.fixedDeltaTime); //move character
+
+
 
 
         animator.SetFloat("Foward/Backward", m_Input.z); //if > 0: foward, if < 0: backward
