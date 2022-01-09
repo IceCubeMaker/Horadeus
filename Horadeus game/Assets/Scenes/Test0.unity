@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 140737722}
   - component: {fileID: 140737723}
   - component: {fileID: 140737724}
+  - component: {fileID: 140737728}
   - component: {fileID: 140737725}
   - component: {fileID: 140737726}
   - component: {fileID: 140737727}
@@ -394,7 +395,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140737721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.564, y: 0.67, z: 0}
+  m_LocalPosition: {x: 24.76, y: 1.15, z: -5.19}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 1703589676}
@@ -516,6 +517,21 @@ CapsuleCollider:
   m_Height: 0.31
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &140737728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140737721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3914d98bcdc924ea0d471f3479d430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 168420920}
+  moveSpeed: 15
+  sightRadius: 10
 --- !u!1 &141051849
 GameObject:
   m_ObjectHideFlags: 0
@@ -6371,6 +6387,10 @@ PrefabInstance:
     - target: {fileID: 8264913601700730944, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264913601700730944, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8264913601700731006, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
       propertyPath: bow
