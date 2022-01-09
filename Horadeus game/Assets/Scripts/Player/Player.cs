@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Player : MonoBehaviour 
-{
+public class Player : MonoBehaviour {
 
     public SO_PlayerInventory inventory;
     public Weapon currentWeapon;
@@ -12,9 +11,6 @@ public class Player : MonoBehaviour
     public PlayerMovement movement;
 
     private ItemData arrowItem;
-
-
-    
 
     [HideInInspector] public HCamera playerCamera;
 
@@ -26,7 +22,7 @@ public class Player : MonoBehaviour
         SwitchCursorLock();
 
         arrowItem = inventory.GetItem(ItemType.Arrow);
-        arrowItem.count = 50;
+        arrowItem.count = 50; //you can enable this for playtesting, it gives you 50 arrows at the start of the game
         movement.Init(cam);
 
         currentWeapon.Equip(this);
@@ -42,27 +38,34 @@ public class Player : MonoBehaviour
         SomeCursorCheck();
 
         if (currentWeapon != null) {
-            if (arrowItem.count > 0)
+            if (Input.GetMouseButtonDown(0)) //if mouse pressed
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    currentWeapon.UseStart();
-                    GameUI.inst.EnableCrosshair(true);
-                }
+                    currentWeapon.UseStart(); 
+                    if (arrowItem.count > 0) { //check if the player has any arrows
+                        GameUI.inst.EnableCrosshair(true); //make crosshair visible
+                    }
+                    if (arrowItem.count <= 0) { //if the player has no arrows
+                        GameUI.inst.EnableNoAmoSign(true); //make no amo sign visible instead of crosshair
+                    }
             }
 
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0)) //when holding mouse button
             {
                 currentWeapon.UseHold();
-                playerCamera.SetZoomPercent(currentWeapon.charge / currentWeapon.maxChargeTime);
+                playerCamera.SetZoomPercent(currentWeapon.charge / currentWeapon.maxChargeTime);//make the camera zoom in
             }
 
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0)) //if mouse button is released
             {
-                currentWeapon.UseRelease();
-                playerCamera.SetZoomPercent(0f);
-                GameUI.inst.EnableCrosshair(false);
-                inventory.TakeItem(arrowItem, 1);
+                if (arrowItem.count > 0) {//if the player has more than 0 arrows
+                    currentWeapon.UseRelease(); //"UseRelease" is responsible for shooting arrows
+                    inventory.TakeItem(arrowItem, 1); //lower the arrow counter by 1
+                }
+
+                playerCamera.SetZoomPercent(0f); //disable camera zoom
+                GameUI.inst.EnableCrosshair(false); //make crosshair invisible
+                GameUI.inst.EnableNoAmoSign(false); //make NoAmoSign invisible
+                
             }
         }
     }
@@ -97,4 +100,5 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
+
 }
