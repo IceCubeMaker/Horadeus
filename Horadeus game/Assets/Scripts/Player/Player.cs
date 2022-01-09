@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour 
+{
 
     public SO_PlayerInventory inventory;
     public Weapon currentWeapon;
@@ -11,6 +12,9 @@ public class Player : MonoBehaviour {
     public PlayerMovement movement;
 
     private ItemData arrowItem;
+
+
+    
 
     [HideInInspector] public HCamera playerCamera;
 
@@ -93,5 +97,4 @@ public class Player : MonoBehaviour {
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
-
 }
