@@ -25,13 +25,13 @@ public class GameUI : MonoBehaviour
     
     public void EnableCrosshair(bool enable)
     {
-        crosshairImage.enabled = enable;
+        crosshairImage.enabled = enable; //Makes crosshair visible
     }
     
 
     public void EnableNoAmoSign(bool enable)
     {
-        NoAmoSignImage.enabled = enable;
+        NoAmoSignImage.enabled = enable; //Show a red "!" sign on screen when the player is out of amo
     }
 
 }
