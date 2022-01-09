@@ -28,12 +28,14 @@ public class Arrow : Projectile {
         rigidBody.AddForce(Physics.gravity * rigidBody.mass * g_multiplier); // Adds the force of gravity
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnCollisionEnter(Collision other) //if arrow hits target
     {
         gameObject.transform.parent = other.transform;
         rigidBody.isKinematic = true;
         rigidBody.velocity = new Vector3(rigidBody.velocity.x , rigidBody.velocity.y , 0);
-        audioSource.PlayOneShot(clips[0]);
         rigidBody.detectCollisions = false;
+
+        audioSource.PlayOneShot(clips[0]); //play sound effect
+        Destroy(gameObject, GetComponent<AudioSource>().clip.length);//destroy arrow
     }
 }

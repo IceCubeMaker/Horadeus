@@ -29,9 +29,9 @@ public class Bow : Weapon
         if (Physics.Raycast(ray, out hit))
         {
             destination = hit.point;
-        } else
+        } else //If there is no object to hit, the arrow is shot towards a point in the air
         {
-            destination = player.playerCamera.transform.position + ray.direction * 20;
+            destination = player.playerCamera.transform.position + ray.direction * 100;
         }
 
         // Fires the arrow towards the destination
