@@ -70,7 +70,7 @@ MonoBehaviour:
   projectileType: 1
   interactMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 31
   rb: {fileID: 4449014942611335200}
   additionalGravity: 0
   refRotationDireciton: {x: 0, y: 0, z: 1}
@@ -79,6 +79,8 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: d02821d7ec7d85243acb8cf1094ba806, type: 3}
   rigidBody: {fileID: 4449014942611335200}
+  theMeshRenderer: {fileID: 3062313766159224012}
+  theTrailRenderer: {fileID: 4449014942611335214}
 --- !u!96 &4449014942611335214
 TrailRenderer:
   serializedVersion: 2
@@ -358,6 +360,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c3aeb3c89fa4174e87bce41550da2f2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7c3aeb3c89fa4174e87bce41550da2f2, type: 3}
       propertyPath: m_Name
       value: arrow
@@ -367,5 +373,10 @@ PrefabInstance:
 --- !u!4 &4194165141872998307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7c3aeb3c89fa4174e87bce41550da2f2, type: 3}
+  m_PrefabInstance: {fileID: 4449014943506174024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &3062313766159224012 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 7c3aeb3c89fa4174e87bce41550da2f2, type: 3}
   m_PrefabInstance: {fileID: 4449014943506174024}
   m_PrefabAsset: {fileID: 0}
