@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 140737727}
   m_Layer: 0
   m_Name: SnowmanHostile
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7998,6 +7998,7 @@ MonoBehaviour:
   arrowCountText: {fileID: 626668843}
   crosshairImage: {fileID: 415243862}
   NoAmoSignImage: {fileID: 1688628452}
+  crosshairAnimator: {fileID: 415243864}
 --- !u!1 &1998960930
 GameObject:
   m_ObjectHideFlags: 0

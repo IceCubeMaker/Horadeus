@@ -46,7 +46,7 @@ public class Arrow : Projectile {
 
         //---------------------------------------------------------------------------
         //this is the part that needs to only run when the arrow hits an enemy
-
+        
         theMeshRenderer.enabled = false; //make the arrow invisible
         theTrailRenderer.enabled = false; //make the trail invisible
         Destroy(gameObject, GetComponent<AudioSource>().clip.length);//destroy arrow after the sound that is being played is finished
