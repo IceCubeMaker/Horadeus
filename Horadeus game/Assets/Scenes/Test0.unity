@@ -374,10 +374,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 140737722}
+  - component: {fileID: 140737729}
   - component: {fileID: 140737723}
   - component: {fileID: 140737724}
-  - component: {fileID: 140737729}
-  - component: {fileID: 140737728}
   - component: {fileID: 140737725}
   - component: {fileID: 140737726}
   - component: {fileID: 140737727}
@@ -518,21 +517,6 @@ CapsuleCollider:
   m_Height: 0.31
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &140737728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140737721}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3914d98bcdc924ea0d471f3479d430, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 168420920}
-  moveSpeed: 15
-  sightRadius: 10
 --- !u!114 &140737729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,14 +529,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c86bd0f5a4ef14483733719c99b281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  defense: 10
+  health: 50
+  defense: 0
   moveSpeed: 15
-  damageFromArrows: 1
-  healthbarVisible: 0
   enableChaseTarget: 1
+  chaseWhenNotInRange: 0
   Target: {fileID: 168420920}
-  sightRadius: 10
+  sightRadius: 12
+  dontTakeDamage: 0
+  noDamageFromArrows: 0
+  healthbarVisible: 0
 --- !u!1 &141051849
 GameObject:
   m_ObjectHideFlags: 0

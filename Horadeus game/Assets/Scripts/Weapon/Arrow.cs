@@ -17,6 +17,7 @@ public class Arrow : Projectile {
     public Rigidbody rigidBody; //select a rigidbody
     public MeshRenderer theMeshRenderer; //select a meshrenderer
     public TrailRenderer theTrailRenderer; //select a trail renderer
+    public int damage; //Determine how much damage an arrow should do towards enemies
     
 
     // Multiplier for the force of gravity

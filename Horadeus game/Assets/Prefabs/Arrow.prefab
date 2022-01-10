@@ -81,6 +81,7 @@ MonoBehaviour:
   rigidBody: {fileID: 4449014942611335200}
   theMeshRenderer: {fileID: 3062313766159224012}
   theTrailRenderer: {fileID: 4449014942611335214}
+  damage: 30
 --- !u!96 &4449014942611335214
 TrailRenderer:
   serializedVersion: 2
