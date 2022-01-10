@@ -81,7 +81,7 @@ MonoBehaviour:
   rigidBody: {fileID: 4449014942611335200}
   theMeshRenderer: {fileID: 3062313766159224012}
   theTrailRenderer: {fileID: 4449014942611335214}
-  damage: 30
+  damage: 116
 --- !u!96 &4449014942611335214
 TrailRenderer:
   serializedVersion: 2
@@ -368,6 +368,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7c3aeb3c89fa4174e87bce41550da2f2, type: 3}
       propertyPath: m_Name
       value: arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7c3aeb3c89fa4174e87bce41550da2f2, type: 3}
+      propertyPath: m_TagString
+      value: Damager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c3aeb3c89fa4174e87bce41550da2f2, type: 3}

@@ -8,6 +8,7 @@ TagManager:
   - Environment
   - Enemy
   - FishNavLocation
+  - Damager
   layers:
   - Default
   - TransparentFX
