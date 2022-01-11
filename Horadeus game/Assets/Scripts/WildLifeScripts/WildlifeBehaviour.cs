@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class WildlifeBehaviour : MonoBehaviour
 {
+//---------------------------------------Input---------------------------------------------
     [Header("Stats")]
     public int health; //Set the health stat 
     public int defense; //Set the defense stat
     public int damageFromArrows; //this should later be changed, so that it automatically takes the damage that is assigned to the arrow it gets hit by
     public int moveSpeed; //Set speed stat
-    
+
     [Header("Chase Target")]
     public bool alwaysChaseTarget; //enable/disable chasing a target
     public bool chaseWhenAttacked; //if this is enabled the snowman will start following the player once they attack them
@@ -19,11 +20,13 @@ public class WildlifeBehaviour : MonoBehaviour
     public float sightRadius; //if you enter this radius, the enemy will follow you
     
     [Header("Others")]
+    public Animator animator; //here you put in the animation of the object this script is attached to
     public bool dontTakeDamage; //Makes it impossible for this entity to take any damage
-    public Animator animator;
+
+//---------------------------------private values------------------------------------------
     private int damageCounter; //this variable will be used to calculate how much damage the entity takes
     
-//------------------------------Before first frame-----------------------------------------
+//--------------------------------Before first frame---------------------------------------
     void Start() 
     {
         if (defense <= 0) { //if defense is equel 0 or less
@@ -35,7 +38,7 @@ public class WildlifeBehaviour : MonoBehaviour
     }
 
 
-//----------------------------------Take Damage Script--------------------------------
+//----------------------------------Take Damage Script-------------------------------------
     
     void OnCollisionEnter(Collision collision) { //if an arrow hits the entity
         if (collision.gameObject.tag == "Damager") { //check if the collision object has the tag "damager"
@@ -49,7 +52,7 @@ public class WildlifeBehaviour : MonoBehaviour
             }
        }
 
-//----------------------------------------Death Script--------------------------------
+//-----------------------------------Death Script------------------------------------------
     void Update() // Update is called once per frame
     {
 
@@ -60,7 +63,7 @@ public class WildlifeBehaviour : MonoBehaviour
 
 
 
-//----------------------------------Chase Target Script----------------------------------
+//----------------------------------Chase Target Script------------------------------------
             dist = Vector3.Distance(Target.position, transform.position);
 
             if (chaseWhenInRange) {

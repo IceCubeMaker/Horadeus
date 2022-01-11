@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  defense: 1
+  defense: 5
   damageFromArrows: 50
   moveSpeed: 11
   alwaysChaseTarget: 0
@@ -538,8 +538,8 @@ MonoBehaviour:
   chaseWhenInRange: 1
   Target: {fileID: 168420920}
   sightRadius: 12
-  dontTakeDamage: 0
   animator: {fileID: 140737724}
+  dontTakeDamage: 0
 --- !u!1 &141051849
 GameObject:
   m_ObjectHideFlags: 0
@@ -6964,8 +6964,8 @@ MonoBehaviour:
   chaseWhenInRange: 0
   Target: {fileID: 1260953959}
   sightRadius: 0
-  dontTakeDamage: 0
   animator: {fileID: 0}
+  dontTakeDamage: 0
 --- !u!1001 &1064236702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7263,8 +7263,8 @@ MonoBehaviour:
   chaseWhenInRange: 0
   Target: {fileID: 168420920}
   sightRadius: 12
-  dontTakeDamage: 1
   animator: {fileID: 0}
+  dontTakeDamage: 1
 --- !u!4 &1257894989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6032749084797306393, guid: 4cc63f2df5ff5314db99e3fbb55edafc, type: 3}
