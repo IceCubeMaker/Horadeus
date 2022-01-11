@@ -7,10 +7,12 @@ public class WildlifeBehaviour : MonoBehaviour
     [Header("Stats")]
     public int health; //Set the health stat 
     public int defense; //Set the defense stat
+    public int damageFromArrows; //this should later be changed, so that it automatically takes the damage that is assigned to the arrow it gets hit by
     public int moveSpeed; //Set speed stat
     
     [Header("Chase Target")]
     public bool enableChaseTarget; //enable/disable chasing a target
+    public bool chaseWhenAttacked; //if this is enabled the snowman will start following the player once they attack them
     public bool chaseWhenNotInRange; //if this is disabled the creature will follow the player no matter where they are
     public Transform Target; //this is the target the player is supposed to follow
     private float dist; //dist = distance ; it is the distance towards the target
@@ -21,7 +23,6 @@ public class WildlifeBehaviour : MonoBehaviour
     public bool noDamageFromArrows; //Disables taking damage from arrows
     
     private int damageCounter; //this variable will be used to calculate how much damage the entity takes
-    
     
 //------------------------------Before first frame-----------------------------------------
     void Start() 
@@ -35,18 +36,22 @@ public class WildlifeBehaviour : MonoBehaviour
     }
 
 
-//----------------------------------Take Damage Script-------------------------------- (BUG PRESENT)
+//----------------------------------Take Damage Script--------------------------------
     
     void OnCollisionEnter(Collision collision) { //if an arrow hits the entity
-        if (collision.gameObject.tag == "Damage") {
+        if (collision.gameObject.tag == "Damager") { //check if the collision object has the tag "damager"
             if (!dontTakeDamage) { //if the entity can take damage
                 damageCounter = 0; //default damagecounter to 0
                 if (!noDamageFromArrows) { //if damage from arrows is turned on
-                    damageCounter = 100; //set damage counter to 100
+                    damageCounter = damageFromArrows; //replace this with the damage that is assigned to the arrow itself
+
+                    if (chaseWhenAttacked) { //if this is enabled the entity will now start chasing the target
+                        chaseWhenNotInRange = true;
+                    }
                 }
                 health = health - (damageCounter / defense); //put damage
             }
-        }
+       }
     }
 
 //----------------------------------------Death Script--------------------------------
@@ -65,14 +70,16 @@ public class WildlifeBehaviour : MonoBehaviour
             dist = Vector3.Distance(Target.position, transform.position);
 
             if (dist <= sightRadius) {//if the player is in sight radius
-                transform.LookAt(Target); //make the object turn towards the target
-                GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed); //makes thecreature run after the target
+                chaseTarget();
             }
             if (chaseWhenNotInRange) {//if the creature chases the target no matter if it's in sight or not
-                transform.LookAt(Target);
-                GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed);
+                chaseTarget();
             }
         }
-//----------------------------------------------------------------------------------------
+    }
+    void chaseTarget() {
+        transform.LookAt(Target); //make the object turn towards the target
+        GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed); //makes thecreature run after the target
+
     }
 }
