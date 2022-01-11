@@ -75,7 +75,7 @@ public class BillboardEffect : MonoBehaviour
         }
         else if ((yImaginaryRotation < 315) & (yImaginaryRotation > 225))
         {
-            FrontBackLeftRight = 4;
+            FrontBackLeftRight = 3;
         }
 
         animator.SetInteger("Front,Back,Left,Right", FrontBackLeftRight);

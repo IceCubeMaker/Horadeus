@@ -20,7 +20,7 @@ public class WildlifeBehaviour : MonoBehaviour
     
     [Header("Others")]
     public bool dontTakeDamage; //Makes it impossible for this entity to take any damage
-    
+    public Animator animator;
     private int damageCounter; //this variable will be used to calculate how much damage the entity takes
     
 //------------------------------Before first frame-----------------------------------------
@@ -64,8 +64,13 @@ public class WildlifeBehaviour : MonoBehaviour
             dist = Vector3.Distance(Target.position, transform.position);
 
             if (chaseWhenInRange) {
-                if (dist <= sightRadius) {//if the player is in sight radius
+                if (dist <= sightRadius) {//if the target is in sight radius
                     chaseTarget();
+                } else {
+                    if (!alwaysChaseTarget) {
+                        animator.SetBool("Walking", false); //turn off walking animation
+                        animator.SetBool("Standing", true); //turn on standing animation
+                    }
                 }
             }
             if (alwaysChaseTarget) {//if the creature chases the target no matter if it's in sight or not
@@ -75,6 +80,7 @@ public class WildlifeBehaviour : MonoBehaviour
     void chaseTarget() {
         transform.LookAt(Target); //make the object turn towards the target
         GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed); //makes thecreature run after the target
-
+        animator.SetBool("Walking", true); //turn on walking animation
+        animator.SetBool("Standing", false); //turn off standing animation
     }
 }
