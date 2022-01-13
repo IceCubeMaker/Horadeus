@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 271f40b47ca605d4d9452f99bfc7d8f9
+labels:
+- Imdraw
+- Primitive
+- Procedural
+- shape
+- Prototyping
+timeCreated: 1458826165
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - m_MeshQuad: {fileID: 4300000, guid: 620be60552ad949418c2e1d3296553cc, type: 3}
+  - m_MeshBox: {fileID: 4300000, guid: 39d7a47a2c562a240964bb106a0739b5, type: 3}
+  - m_MeshDisc: {fileID: 4300000, guid: 74364d690c4a1484f97055401adbe134, type: 3}
+  - m_MeshSphere: {fileID: 4300000, guid: e3bb21b97d7d583489a33fbdd8a3243b, type: 3}
+  - m_MeshCapsuleBody: {fileID: 4300000, guid: 3c90e2d8b397655429187ed7f6fdd57d, type: 3}
+  - m_MeshCapsuleCap: {fileID: 4300000, guid: 51f9b60978725d44ca20c5cf44f51b4e, type: 3}
+  - m_MeshCylinder: {fileID: 4300000, guid: 45ae4f47c2df38840b743f87c2f14bca, type: 3}
+  executionOrder: -10000
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

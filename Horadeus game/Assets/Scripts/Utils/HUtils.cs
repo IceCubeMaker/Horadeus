@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MUtils : Singleton<MUtils> {
+public class HUtils : Singleton<HUtils> {
 
 	public override void Init() {
 

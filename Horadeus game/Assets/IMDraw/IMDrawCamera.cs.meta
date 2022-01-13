@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 856d84ca395646e4094a0b5854874360
+timeCreated: 1566753476
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - m_Font: {instanceID: 0}
+  - m_MaterialLine: {fileID: 2100000, guid: b8330650792d51e4bba1c40935d7a5f0, type: 2}
+  - m_MaterialMesh: {fileID: 2100000, guid: 23da08da0fe8e2f42b2c3cc0dc8a9194, type: 2}
+  - m_MaterialMeshArc: {fileID: 2100000, guid: d1e8631ddf0377041bd717dcbb055ed3, type: 2}
+  - m_MaterialTextMesh: {fileID: 2100000, guid: 3ebe12ad977f2c744bb6d68013c01b6f,
+      type: 2}
+  executionOrder: 10000
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

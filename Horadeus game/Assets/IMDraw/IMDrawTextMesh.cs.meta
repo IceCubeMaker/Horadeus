@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 32095c15d3bf3d2469f921d2f0ef53cd
+timeCreated: 1499119563
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - m_RootGameObject: {instanceID: 0}
+  - m_RootTransform: {instanceID: 0}
+  - m_MeshRenderer: {instanceID: 0}
+  - m_TextMesh: {instanceID: 0}
+  - m_Material: {instanceID: 0}
+  - m_Font: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
