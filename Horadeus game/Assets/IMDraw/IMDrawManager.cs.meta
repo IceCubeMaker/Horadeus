@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 8379b673feece5d4c925e12245baec2d
+timeCreated: 1461544291
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - m_MeshQuad: {fileID: 4300002, guid: 01eb41b0b51f98a498d3564048928fe4, type: 3}
+  - m_MeshBox: {fileID: 4300000, guid: b72de038b99c81447b1d9c4289809198, type: 3}
+  - m_MeshPyramid: {fileID: 4300000, guid: 2ae13bff99c390d45bf96c8282404eea, type: 3}
+  - m_MeshRhombus: {fileID: 4300000, guid: ae4378072ef627041bd1d9cd88631627, type: 3}
+  - m_MeshDisc: {fileID: 4300002, guid: f1c6cce408cb4e6459f1686ab08405a9, type: 3}
+  - m_MeshSphere: {fileID: 4300000, guid: c5cec14714c0e5d4ab7a0139e92df731, type: 3}
+  - m_MeshCone: {fileID: 4300000, guid: e87a6476b109da14c9668d0fc98353d4, type: 3}
+  - m_MeshCapsuleBody: {fileID: 4300000, guid: d1a0d9d3044ea1a46aec34df44d78fda, type: 3}
+  - m_MeshCapsuleCap: {fileID: 4300000, guid: cff5b33a1fa74e045a35c135a657a1ec, type: 3}
+  - m_MeshCylinder: {fileID: 4300002, guid: f98dcfd435e63ea40a8cf1eebdc0d63a, type: 3}
+  executionOrder: -10000
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

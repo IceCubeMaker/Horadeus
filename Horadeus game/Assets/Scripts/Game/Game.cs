@@ -38,6 +38,11 @@ public class Game : Singleton<Game> {
 
 		player.Init(mainCamera);
 		map.Init();
+
+		mainCamera.SetTarget(new CameraTarget()
+		{
+			transform = player.movement.transform
+		});
 	}
 
 	private void InternalUpdate()

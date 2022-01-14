@@ -51,7 +51,7 @@ public class Projectile : PoolObject {
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (MUtils.LayerInMask(interactMask, collision.gameObject.layer)) {
+        if (HUtils.LayerInMask(interactMask, collision.gameObject.layer)) {
             Interact(collision);
         }
     }

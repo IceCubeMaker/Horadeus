@@ -7,27 +7,27 @@ public class HCamera : MonoBehaviour
     public Transform cameraTransform;
     public Camera cameraComponent;
 
-    public Transform target;
+    public CameraTarget target;
 
     [Header("Config")]
-    public Vector2 minMaxZoomFOV;
+    public SO_HCameraConfig config;
 
-    private float targetFov;
-
-    public Vector2 offsetDefault;
-    public Vector2 offsetWhenAiming;
-    public float sensX = 100, sensY = 100;
     private float rotX, rotY;
-    public float dst = 10;
-
     private Vector2 currerntOffsetInPlane;
     private Vector2 targetOffsetInPlane;
+    private float targetFov;
+
+    private Vector3 targetCamPos;
+    private Vector3 posSmoothDamp;
+
+    private RaycastHit[] hitCache = new RaycastHit[10];
+    private Transform targetTopRootParent;
 
     public void Init()
     {
-        targetFov = minMaxZoomFOV.y;
-        targetOffsetInPlane = offsetDefault;
-        currerntOffsetInPlane = offsetDefault;
+        targetFov = config.minMaxZoomFOV.y;
+        targetOffsetInPlane = config.defaultOffset;
+        currerntOffsetInPlane = config.defaultOffset;
     }
 
     public void InternalUpdate()
@@ -40,31 +40,102 @@ public class HCamera : MonoBehaviour
 
     private void Look()
     {
-        float mouseX = Input.GetAxis("Mouse X") * sensX;
-        float mouseY = Input.GetAxis("Mouse Y") * sensY;
+        float mouseX = Input.GetAxis("Mouse X") * config.sensX;
+        float mouseY = Input.GetAxis("Mouse Y") * config.sensY;
 
         rotY += mouseX * Time.deltaTime;
         rotX = Mathf.Clamp(rotX + mouseY * Time.deltaTime, -70, 70);
 
         Quaternion rot = Quaternion.Euler(0, rotY, 0) * Quaternion.Euler(rotX, 0, 0);
-        Vector3 camPos = target.position + rot * Vector3.forward * dst;
+        Vector3 camPos = target.transform.position + rot * Vector3.forward * config.defaultFollowDst;
 
         cameraTransform.rotation = rot;
         cameraTransform.forward = -cameraTransform.forward;
 
         camPos += cameraTransform.right * currerntOffsetInPlane.x + cameraTransform.up * currerntOffsetInPlane.y;
 
-        cameraTransform.position = camPos;
+        // Anti-clipping
+        Vector3 clipedCamPos = camPos;
+
+        Vector3 dd = (camPos - target.transform.position);
+        Vector3 clipDir = dd.normalized;
+        Ray targetToPotentialCamPos = new Ray(target.transform.position, clipDir);
+        float minClipedDst = dd.magnitude;
+
+        int hitCount = Physics.RaycastNonAlloc(targetToPotentialCamPos, hitCache, config.defaultFollowDst, config.clipMask, QueryTriggerInteraction.Ignore);
+
+        if(hitCount > 0)
+        {
+            for (int i = 0; i < Mathf.Min(hitCount, hitCache.Length); i++)
+            {
+                Bounds colliderBounds = hitCache[i].collider.bounds;
+
+                if (colliderBounds.size.x < config.minObjectBoundsXZToClip || colliderBounds.size.z < config.minObjectBoundsXZToClip)
+                {
+                    if (config.debugDraw)
+                    {
+                        IMDraw.Bounds(colliderBounds, Color.green);
+                    }
+                    continue;
+                }
+
+                if (config.debugDraw) { 
+                    IMDraw.Bounds(colliderBounds, Color.red);
+                }
+
+                Vector3 clipedPos = hitCache[i].point - clipDir * 0.5f;
+                float newDst = (clipedPos - targetToPotentialCamPos.origin).magnitude;
+
+                if (newDst < minClipedDst)
+                {
+                    clipedCamPos = clipedPos;
+                    minClipedDst = newDst;
+                }
+
+                
+                Transform hitRootT = hitCache[i].transform.GetTopRootTransform();
+                if(hitRootT != targetTopRootParent)
+                {
+                    
+                }
+            }
+        }
+
+        camPos = clipedCamPos;
+        // Anti-clipping
+
+        targetCamPos = camPos;
+
+        if (config.usePositionSmooth)
+        {
+            cameraTransform.position = Vector3.SmoothDamp(cameraTransform.position, targetCamPos,ref posSmoothDamp, config.positionSmooth);
+        } else
+        {            
+            cameraTransform.position = targetCamPos;
+        }
+    }
+
+    public void SetTarget(CameraTarget _target)
+    {
+        target = _target;
+
+        targetTopRootParent = target.transform.GetTopRootTransform();
     }
 
     public void SetZoomPercent(float p, bool instant = false)
     {
-        targetFov = Mathf.Lerp(minMaxZoomFOV.x, minMaxZoomFOV.y, 1 - p);
-        targetOffsetInPlane = Vector2.Lerp(offsetDefault, offsetWhenAiming, p);
+        targetFov = Mathf.Lerp(config.minMaxZoomFOV.x, config.minMaxZoomFOV.y, 1 - p);
+        targetOffsetInPlane = Vector2.Lerp(config.defaultOffset, config.offsetWhenAiming, p);
 
         if (instant) {
             cameraComponent.fieldOfView = targetFov;
         }
     }
 
+}
+
+[System.Serializable]
+public class CameraTarget
+{
+    public Transform transform;
 }
