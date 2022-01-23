@@ -21,6 +21,8 @@ public class SoundManager : MonoBehaviour
     {
         public KeyCode input;
         public int inClip;
+        [Tooltip("Check to use random clips")]
+        public bool fromClipsOrFromRandom;
     }
 
     [SerializeField]
@@ -115,10 +117,22 @@ public class SoundManager : MonoBehaviour
     {
         for (int i = 0; i < inClips.Length; i++)
         {
-            if (Input.GetKeyDown(inClips[i].input))
+
+            if (inClips[i].fromClipsOrFromRandom)
             {
-                audioSource.PlayOneShot(clips[inClips[i].inClip]);
+                if (Input.GetKeyDown(inClips[i].input))
+                {
+                    audioSource.PlayOneShot(GetRandomClip());
+                }
             }
+            else
+            {
+                if (Input.GetKeyDown(inClips[i].input))
+                {
+                    audioSource.PlayOneShot(clips[inClips[i].inClip]);
+                }
+            }
+                
         }
     }
 
