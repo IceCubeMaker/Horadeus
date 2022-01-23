@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource audioSource;
     [Tooltip("Used by collision trigger")]
     public Rigidbody rigidBody;
+    public Collider collider;
 
     public bool playOnTrueIsOn;
     [System.Serializable]
@@ -32,30 +33,54 @@ public class SoundManager : MonoBehaviour
         public KeyCode input;
         public int inClip;
         [Tooltip("Check to use random clips")]
-        public bool fromClipsOrFromRandom;
+        public bool clipsOrRandom;
     }
 
     [SerializeField]
     public InClip[] inClips;
 
-    [Tooltip("This is used only by On Awake trigger")]
-    public bool randomClip;
-    public bool randomTime;
+    [Header("")]
+
     public bool areaEnter;
-    public bool collision;
+    [System.Serializable]
+    public struct OnAreaEnter
+    {
+        public LayerMask areaInteractionLayer;
+        public int areaClip;
+        public bool clipsOrRandom;
+    }
+    public OnAreaEnter[] onAreaEnterClips;
+    [Header("")]
+
+    public bool onCollision;
+    [System.Serializable]
+    public struct OnCollision
+    {
+        public int areaClip;
+        public bool clipsOrRandom;
+    }
+    public OnCollision[] onCollisionClips;
+
+    [Header("")]
+
     public bool onAwake;
     [Header("Audio Settings")]
     public bool loop;
     [Range(0.0f, 1f)]
     public float spatialBlend;
     [SerializeField]
-    public LayerMask interactionLayers;
-    [SerializeField]
     public AudioClip[] clips;
     public AudioClip[] randomClips;
     [Header("Random Time Range")]
     public float minTime;
     public float maxTime;
+
+    [Tooltip("This is used only by On Awake, Area Enter and collision triggers")]
+    public bool randomClip;
+    public bool randomTime;
+
+    private bool isInArea;
+    private bool hasCollided;
     #endregion
 
     // Start is called before the first frame update
@@ -103,7 +128,6 @@ public class SoundManager : MonoBehaviour
         {
             audioSource.playOnAwake = true;
         }
-        
     }
 
     // Update is called once per frame
@@ -113,44 +137,49 @@ public class SoundManager : MonoBehaviour
         {
             PlayOnInput();
         }
+
         if (playOnTrueIsOn)
         {
             PlayOnTrue();
+        }
+        if (areaEnter)
+        {
+            _OnTriggerEnter();
         }
     }
 
     private AudioClip GetRandomClip()
     {
         return randomClips[UnityEngine.Random.Range(0, randomClips.Length)];
-    }
+    }//Returns a random clip from the RandomClips array
 
     private float GetRandomTimeInRange()
     {
         return UnityEngine.Random.Range(minTime, maxTime);
-    }
+    }//Returns a random number
 
     private void PlayOnInput()
     {
-        for (int i = 0; i < inClips.Length; i++)
+        for (int i = 0; i < inClips.Length; i++)//checks every array element
         {
 
-            if (inClips[i].fromClipsOrFromRandom)
+            if (inClips[i].clipsOrRandom)//checks if random clips is enabled for the current input setting
             {
-                if (Input.GetKeyDown(inClips[i].input))
+                if (Input.GetKeyDown(inClips[i].input))//plays a random clip when the input is pressed
                 {
                     audioSource.PlayOneShot(GetRandomClip());
                 }
             }
             else
             {
-                if (Input.GetKeyDown(inClips[i].input))
+                if (Input.GetKeyDown(inClips[i].input))//plays the indicated clip from the Clips array
                 {
                     audioSource.PlayOneShot(clips[inClips[i].inClip]);
                 }
             }
                 
         }
-    }
+    }//plays a clip or randomclip when a specific input is pressed
 
     private void PlayOnTrue()
     {
@@ -165,7 +194,43 @@ public class SoundManager : MonoBehaviour
                 audioSource.PlayOneShot(clips[playOnTrue[i].playClip]);
             }
         }
+    }//just plays a clip or randomclip when the play bool is true
+    
+    private void _OnTriggerEnter()
+    {
+        for (int i = 0; i < onAreaEnterClips.Length; i++)
+        {
+            if (isInArea)
+            {
+                if (onAreaEnterClips[i].clipsOrRandom)
+                {
+                    audioSource.PlayOneShot(GetRandomClip());
+                }
+                else
+                {
+                    audioSource.PlayOneShot(clips[onAreaEnterClips[i].areaClip]);
+                }
+            }
+        }
     }
 
+    private void _OnCollisionEnter()
+    {
+
+    }
+
+    public void OnTriggerEnter()
+    {
+        isInArea = true;
+    }
+    public void OnTriggerExit()
+    {
+        isInArea = false;
+    }
+
+    public void OnCollisionEnter()
+    {
+        hasCollided = true;
+    }
 }
 
