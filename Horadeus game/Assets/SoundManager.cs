@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+
+
 public class SoundManager : MonoBehaviour
 {
     #region INSPECTOR_VARIABLES
@@ -11,8 +13,19 @@ public class SoundManager : MonoBehaviour
     public bool play;
     [Header("Audio Triggers")]
     public bool onInput;
-    [Tooltip("The inputs get assigned to the equal clip index. (Ex: Input 0 -> Clip 0)")]
-    public KeyCode[] inputs;
+    //[Tooltip("The inputs get assigned to the equal clip index. (Ex: Input 0 -> Clip 0)")]
+    //public KeyCode[] inputs;
+
+    [System.Serializable]
+    public class InClip
+    {
+        public KeyCode input;
+        public int inClip;
+    }
+
+    [SerializeField]
+    public InClip[] inClips;
+
     public bool randomClip;
     public bool randomTime;
     public bool areaEnter;
@@ -100,11 +113,11 @@ public class SoundManager : MonoBehaviour
 
     private void PlayOnInput()
     {
-        for (int i = 0; i < inputs.Length; i++)
+        for (int i = 0; i < inClips.Length; i++)
         {
-            if (Input.GetKeyDown(inputs[i]))
+            if (Input.GetKeyDown(inClips[i].input))
             {
-                audioSource.PlayOneShot(clips[i]);
+                audioSource.PlayOneShot(clips[inClips[i].inClip]);
             }
         }
     }
