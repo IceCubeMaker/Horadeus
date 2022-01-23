@@ -9,15 +9,25 @@ public class SoundManager : MonoBehaviour
 {
     #region INSPECTOR_VARIABLES
     public AudioSource audioSource;
-    [Header("Play when this is bool is true (for animations)")]
-    public bool play;
+    [Tooltip("Used by collision trigger")]
+    public Rigidbody rigidBody;
+
+    public bool playOnTrueIsOn;
+    [System.Serializable]
+    public struct PlayClip
+    {
+        [Tooltip("Play when this is bool is true")]
+        public bool play;
+        public int playClip;
+    }
+    [Tooltip("Aimed at animations")]
+    public PlayClip[] playOnTrue;
+
     [Header("Audio Triggers")]
     public bool onInput;
-    //[Tooltip("The inputs get assigned to the equal clip index. (Ex: Input 0 -> Clip 0)")]
-    //public KeyCode[] inputs;
 
     [System.Serializable]
-    public class InClip
+    public struct InClip
     {
         public KeyCode input;
         public int inClip;
@@ -28,6 +38,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     public InClip[] inClips;
 
+    [Tooltip("This is used only by On Awake trigger")]
     public bool randomClip;
     public bool randomTime;
     public bool areaEnter;
@@ -102,12 +113,17 @@ public class SoundManager : MonoBehaviour
         {
             PlayOnInput();
         }
+        if (playOnTrueIsOn)
+        {
+            PlayOnTrue();
+        }
     }
 
     private AudioClip GetRandomClip()
     {
         return randomClips[UnityEngine.Random.Range(0, randomClips.Length)];
     }
+
     private float GetRandomTimeInRange()
     {
         return UnityEngine.Random.Range(minTime, maxTime);
@@ -133,6 +149,21 @@ public class SoundManager : MonoBehaviour
                 }
             }
                 
+        }
+    }
+
+    private void PlayOnTrue()
+    {
+        for (int i = 0; i < playOnTrue.Length; i++)
+        {
+            if (randomClip)
+            {
+                audioSource.PlayOneShot(GetRandomClip());
+            }
+            else
+            {
+                audioSource.PlayOneShot(clips[playOnTrue[i].playClip]);
+            }
         }
     }
 
