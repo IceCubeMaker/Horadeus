@@ -6778,7 +6778,9 @@ MonoBehaviour:
   audioSource: {fileID: 840541335}
   play: 0
   onInput: 0
-  inputs: 
+  inClips:
+  - input: 105
+    clip: 0
   randomClip: 0
   randomTime: 0
   areaEnter: 0
@@ -6789,7 +6791,8 @@ MonoBehaviour:
   interactionLayers:
     serializedVersion: 2
     m_Bits: 0
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 855d18e6ba9f01f44a572137fbc45a9d, type: 3}
   randomClips: []
   minTime: 0
   maxTime: 0
