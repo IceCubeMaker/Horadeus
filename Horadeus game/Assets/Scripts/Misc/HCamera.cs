@@ -12,7 +12,7 @@ public class HCamera : MonoBehaviour
     [Header("Config")]
     public SO_HCameraConfig config;
 
-    private float rotX, rotY;
+    private float rotX, rotY; //X,Y Variables for Camera rotation
     private Vector2 currerntOffsetInPlane;
     private Vector2 targetOffsetInPlane;
     private float targetFov;
@@ -23,33 +23,42 @@ public class HCamera : MonoBehaviour
     private RaycastHit[] hitCache = new RaycastHit[10];
     private Transform targetTopRootParent;
 
-    public void Init()
+    public void Init() //Called at start by Game.cs
     {
-        targetFov = config.minMaxZoomFOV.y;
-        targetOffsetInPlane = config.defaultOffset;
-        currerntOffsetInPlane = config.defaultOffset;
+        // -----------Fetching variables from config scriptable object---------------------
+
+        targetFov = config.minMaxZoomFOV.y; //Fetch max zoom from y component, x is min
+        targetOffsetInPlane = config.defaultOffset; //Fetch default offset to target offset
+        currerntOffsetInPlane = config.defaultOffset; //Setting value of current to use in transitions to reach the target
+
+        // --------------------------------------------------------------------------------
     }
 
-    public void InternalUpdate()
+    public void InternalUpdate() //Called every frame by Game.cs
     {
-        cameraComponent.fieldOfView = Mathf.Lerp(cameraComponent.fieldOfView, targetFov, Time.deltaTime * 10f);
-        currerntOffsetInPlane = Vector2.Lerp(currerntOffsetInPlane, targetOffsetInPlane, Time.deltaTime * 10f);
+        cameraComponent.fieldOfView = Mathf.Lerp(cameraComponent.fieldOfView, targetFov, Time.deltaTime * 10f); //Set fov to target-fov through a Linear Interpolation
+        currerntOffsetInPlane = Vector2.Lerp(currerntOffsetInPlane, targetOffsetInPlane, Time.deltaTime * 10f); //Set the offset to target-offset through a Linear Interpolation
 
-        Look();
+        Look(); //Execute camera code
     }
 
     private void Look()
     {
+        //Fetching change in X and Y of Mouse/ Right analog stick for controller and multiplying with sensitivity
         float mouseX = Input.GetAxis("Mouse X") * config.sensX;
         float mouseY = Input.GetAxis("Mouse Y") * config.sensY;
 
-        rotY += mouseX * Time.deltaTime;
-        rotX = Mathf.Clamp(rotX + mouseY * Time.deltaTime, -70, 70);
+        //-------------------------------------------------------Camera Rotation-----------------------------------------------------------------
 
-        Quaternion rot = Quaternion.Euler(0, rotY, 0) * Quaternion.Euler(rotX, 0, 0);
+        rotY += mouseX * Time.deltaTime; //Adding change in Horizontal value
+        rotX = Mathf.Clamp(rotX + mouseY * Time.deltaTime, -70, 70); //Adding change in Vertical value and clamping rotation
+
+        Quaternion rot = Quaternion.Euler(0, rotY, 0) * Quaternion.Euler(rotX, 0, 0); // Combining both rotations into one Quaternion to set
+        cameraTransform.rotation = rot; // Setting Camera rotation
+
+        //---------------------------------------------------------------------------------------------------------------------------------------
+
         Vector3 camPos = target.transform.position + rot * Vector3.forward * config.defaultFollowDst;
-
-        cameraTransform.rotation = rot;
         cameraTransform.forward = -cameraTransform.forward;
 
         camPos += cameraTransform.right * currerntOffsetInPlane.x + cameraTransform.up * currerntOffsetInPlane.y;
