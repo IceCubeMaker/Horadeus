@@ -38,7 +38,7 @@ public class Player : MonoBehaviour {
         SomeCursorCheck();
 
         if (currentWeapon != null) {
-            if (Input.GetMouseButtonDown(0)) //if mouse pressed
+            if (Input.GetButtonDown("Fire1")) //if mouse pressed
             {
                     currentWeapon.UseStart(); 
                     if (arrowItem.count > 0) { //check if the player has any arrows
@@ -49,13 +49,13 @@ public class Player : MonoBehaviour {
                     }
             }
 
-            if (Input.GetMouseButton(0)) //when holding mouse button
+            if (Input.GetButton("Fire1")) //when holding mouse button
             {
                 currentWeapon.UseHold();
                 playerCamera.SetZoomPercent(currentWeapon.charge / currentWeapon.maxChargeTime);//make the camera zoom in
             }
 
-            if (Input.GetMouseButtonUp(0)) //if mouse button is released
+            if (Input.GetButtonUp("Fire1")) //if mouse button is released
             {
                 if (arrowItem.count > 0) {//if the player has more than 0 arrows
                     currentWeapon.UseRelease(); //"UseRelease" is responsible for shooting arrows
