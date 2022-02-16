@@ -66,9 +66,10 @@ public class HCamera : MonoBehaviour
 
         Vector3 clipedCamPos = camPos; //Setting default value of clipped pos, Will be overwritten if needs to be clipped
 
-        Vector3 dd = (camPos - target.transform.position); //Calculate vector from camPos to target.gransform.position
+        Vector3 targetTransformOffseted = target.transform.position + cameraTransform.right * targetOffsetInPlane.x; //Calculate the point from which ray will be sent
+        Vector3 dd = (camPos - targetTransformOffseted ); //Calculate vector from camPos to targetTransformOffseted
         Vector3 clipDir = dd.normalized; //Normalize to get direction with a length of 1
-        Ray targetToPotentialCamPos = new Ray(target.transform.position, clipDir); //Create a Ray Struct to use in Raycast
+        Ray targetToPotentialCamPos = new Ray(targetTransformOffseted, clipDir); //Create a Ray Struct to use in Raycast
         float minClipedDst = dd.magnitude; //Use distance from camera to target as min distance clipped
 
         int hitCount = Physics.RaycastNonAlloc(targetToPotentialCamPos, hitCache, config.defaultFollowDst, config.clipMask, QueryTriggerInteraction.Ignore); //Does a raycast. Returns hits.
@@ -96,13 +97,13 @@ public class HCamera : MonoBehaviour
 
                 //-------------------------------Calculating Closest point to target----------------------------------------
 
-                Vector3 clipedPos = hitCache[i].point - clipDir * 0.5f;
-                float newDst = (clipedPos - targetToPotentialCamPos.origin).magnitude;
+                Vector3 clipedPos = hitCache[i].point + cameraTransform.forward * 0.5f; // Move the camera a bit forward from the point ray hit
+                float newDst = (clipedPos - targetToPotentialCamPos.origin).magnitude; // Distance between Ray origin and new calculated potential camera point
 
                 if (newDst < minClipedDst)
                 {
-                    clipedCamPos = clipedPos;
-                    minClipedDst = newDst;
+                    clipedCamPos = clipedPos; //Set new clipped position
+                    minClipedDst = newDst; // Set new clipped distance
                 }
 
                 
