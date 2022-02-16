@@ -15,7 +15,7 @@ public class HCamera : MonoBehaviour
     private float rotX, rotY; //X,Y Variables for Camera rotation
     private Vector2 currerntOffsetInPlane;
     private Vector2 targetOffsetInPlane;
-    private float targetFov;
+    private float targetFov; //Change Fov to this value every update
 
     private Vector3 targetCamPos;
     private Vector3 posSmoothDamp;
@@ -52,32 +52,35 @@ public class HCamera : MonoBehaviour
 
         rotY += mouseX * Time.deltaTime; //Adding change in Horizontal value
         rotX = Mathf.Clamp(rotX + mouseY * Time.deltaTime, -70, 70); //Adding change in Vertical value and clamping rotation
-
         Quaternion rot = Quaternion.Euler(0, rotY, 0) * Quaternion.Euler(rotX, 0, 0); // Combining both rotations into one Quaternion to set
         cameraTransform.rotation = rot; // Setting Camera rotation
 
-        //---------------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------Add Offset---------------------------------------------------------------------
 
-        Vector3 camPos = target.transform.position + rot * Vector3.forward * config.defaultFollowDst;
-        cameraTransform.forward = -cameraTransform.forward;
+        Vector3 camPos = target.transform.position + rot * Vector3.forward * config.defaultFollowDst; //Moves the camera back
+        cameraTransform.forward = -cameraTransform.forward; //Makes the camera face inwards to character
 
-        camPos += cameraTransform.right * currerntOffsetInPlane.x + cameraTransform.up * currerntOffsetInPlane.y;
+        camPos += cameraTransform.right * currerntOffsetInPlane.x + cameraTransform.up * currerntOffsetInPlane.y; //Apply offset to camera
 
-        // Anti-clipping
-        Vector3 clipedCamPos = camPos;
+        //-------------------------------------------------------Anti-clipping-------------------------------------------------------------------
 
-        Vector3 dd = (camPos - target.transform.position);
-        Vector3 clipDir = dd.normalized;
-        Ray targetToPotentialCamPos = new Ray(target.transform.position, clipDir);
-        float minClipedDst = dd.magnitude;
+        Vector3 clipedCamPos = camPos; //Setting default value of clipped pos, Will be overwritten if needs to be clipped
 
-        int hitCount = Physics.RaycastNonAlloc(targetToPotentialCamPos, hitCache, config.defaultFollowDst, config.clipMask, QueryTriggerInteraction.Ignore);
+        Vector3 targetTransformOffseted = target.transform.position + cameraTransform.right * targetOffsetInPlane.x; //Calculate the point from which ray will be sent
+        Vector3 dd = (camPos - targetTransformOffseted ); //Calculate vector from camPos to targetTransformOffseted
+        Vector3 clipDir = dd.normalized; //Normalize to get direction with a length of 1
+        Ray targetToPotentialCamPos = new Ray(targetTransformOffseted, clipDir); //Create a Ray Struct to use in Raycast
+        float minClipedDst = dd.magnitude; //Use distance from camera to target as min distance clipped
 
-        if(hitCount > 0)
+        int hitCount = Physics.RaycastNonAlloc(targetToPotentialCamPos, hitCache, config.defaultFollowDst, config.clipMask, QueryTriggerInteraction.Ignore); //Does a raycast. Returns hits.
+
+        if(hitCount > 0) //If Hit check closest point to target and set camera position
         {
-            for (int i = 0; i < Mathf.Min(hitCount, hitCache.Length); i++)
+            for (int i = 0; i < Mathf.Min(hitCount, hitCache.Length); i++) // Loop through number of hits to find closest point to target
             {
-                Bounds colliderBounds = hitCache[i].collider.bounds;
+                //--------------------------------Debugging Collider Bounds of Object hit-----------------------------------
+
+                Bounds colliderBounds = hitCache[i].collider.bounds; //Gets Bounds Struct
 
                 if (colliderBounds.size.x < config.minObjectBoundsXZToClip || colliderBounds.size.z < config.minObjectBoundsXZToClip)
                 {
@@ -92,13 +95,15 @@ public class HCamera : MonoBehaviour
                     IMDraw.Bounds(colliderBounds, Color.red);
                 }
 
-                Vector3 clipedPos = hitCache[i].point - clipDir * 0.5f;
-                float newDst = (clipedPos - targetToPotentialCamPos.origin).magnitude;
+                //-------------------------------Calculating Closest point to target----------------------------------------
+
+                Vector3 clipedPos = hitCache[i].point + cameraTransform.forward * 0.5f; // Move the camera a bit forward from the point ray hit
+                float newDst = (clipedPos - targetToPotentialCamPos.origin).magnitude; // Distance between Ray origin and new calculated potential camera point
 
                 if (newDst < minClipedDst)
                 {
-                    clipedCamPos = clipedPos;
-                    minClipedDst = newDst;
+                    clipedCamPos = clipedPos; //Set new clipped position
+                    minClipedDst = newDst; // Set new clipped distance
                 }
 
                 
@@ -110,20 +115,25 @@ public class HCamera : MonoBehaviour
             }
         }
 
-        camPos = clipedCamPos;
-        // Anti-clipping
+        camPos = clipedCamPos; //Setting camPos to be new closest point after clipping
 
-        targetCamPos = camPos;
+        //-------------------------------------- Anti-clipping END --------------------------------------------------------
 
-        if (config.usePositionSmooth)
+        targetCamPos = camPos; //Setting targetCamPos to use for interpolation if needed
+
+        if (config.usePositionSmooth) //Checks if smoothing should be applied
         {
-            cameraTransform.position = Vector3.SmoothDamp(cameraTransform.position, targetCamPos,ref posSmoothDamp, config.positionSmooth);
+            cameraTransform.position = Vector3.SmoothDamp(cameraTransform.position, targetCamPos,ref posSmoothDamp, config.positionSmooth); //Sets new position with smoothing
         } else
-        {            
-            cameraTransform.position = targetCamPos;
+        {
+            cameraTransform.position = targetCamPos; //Directly sets new position
         }
     }
 
+    /// <summary>
+    /// Sets new target for camera to follow
+    /// </summary>
+    /// <param name="_target">new target</param>
     public void SetTarget(CameraTarget _target)
     {
         target = _target;

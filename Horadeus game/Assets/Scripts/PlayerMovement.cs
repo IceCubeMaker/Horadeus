@@ -53,13 +53,11 @@ public class PlayerMovement : MonoBehaviour
         m_Input.Normalize();
         Vector3 m_Movement = cam_orientation * m_Input.z + transform.right * m_Input.x;
 
-        if (m_Input.z > 0) {} else {
         //make sprite face camera when walking
         Vector3 lookPos = (playerCamera.cameraTransform.position - transform.position) * -1; //-1 because want the back to face the cam. not the front
         lookPos.y = 0;
         Quaternion rotation = Quaternion.LookRotation(lookPos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, faceCamSpeed);
-        }
         
         m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Speed * Time.fixedDeltaTime); //move character
 
