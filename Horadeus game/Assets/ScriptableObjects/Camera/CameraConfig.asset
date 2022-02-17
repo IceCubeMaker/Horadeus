@@ -23,5 +23,5 @@ MonoBehaviour:
   clipMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  minObjectBoundsXZToClip: 1
+  minObjectBoundsXZToClip: 0
   debugDraw: 1
