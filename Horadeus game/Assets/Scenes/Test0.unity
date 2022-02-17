@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.3731161, g: 0.3807387, b: 0.35873166, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311643, g: 0.38073903, b: 0.3587318, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6776,26 +6776,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 840541335}
-  play: 0
+  rigidBody: {fileID: 0}
+  collider: {fileID: 0}
+  playOnTrueIsOn: 0
+  playOnTrue: []
   onInput: 0
   inClips:
   - input: 105
-    clip: 0
-  randomClip: 0
-  randomTime: 0
+    inClip: 0
+    clipsOrRandom: 0
   areaEnter: 0
-  collision: 0
+  onAreaEnterClips: []
+  onCollision: 0
+  onCollisionClips: []
   onAwake: 0
   loop: 0
   spatialBlend: 0
-  interactionLayers:
-    serializedVersion: 2
-    m_Bits: 0
   clips:
   - {fileID: 8300000, guid: 855d18e6ba9f01f44a572137fbc45a9d, type: 3}
   randomClips: []
   minTime: 0
   maxTime: 0
+  randomClip: 0
+  randomTime: 0
 --- !u!4 &840541337
 Transform:
   m_ObjectHideFlags: 0
@@ -6930,6 +6933,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8264913601521831300, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e3f5805bf6eec84fad4daec8c3397d2, type: 2}
     - target: {fileID: 8264913601521831301, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7006,6 +7013,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8264913603181096242, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264913603181096242, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e3f5805bf6eec84fad4daec8c3397d2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
 --- !u!114 &903449545 stripped
@@ -8797,7 +8812,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
