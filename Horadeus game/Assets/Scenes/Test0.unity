@@ -7575,7 +7575,7 @@ MonoBehaviour:
   chaseWhenInRange: 0
   Target: {fileID: 1260953959}
   sightRadius: 0
-  animator: {fileID: 0}
+  animator: {fileID: 1062837582}
   dontTakeDamage: 0
 --- !u!1001 &1064236702
 PrefabInstance:
