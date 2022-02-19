@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 cam_orientation = new Vector3(playerCamera.cameraTransform.forward.x, 0, playerCamera.cameraTransform.forward.z); //get camera orientation
         Vector3 m_Input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")); //Store user input as a input vector
         m_Input.Normalize();
-        Vector3 m_Movement = cam_orientation * m_Input.z + transform.right * m_Input.x;
+        Vector3 m_Movement = cam_orientation.normalized * m_Input.z + transform.right * m_Input.x;
 
         //make sprite face camera when walking
         Vector3 lookPos = (playerCamera.cameraTransform.position - transform.position) * -1; //-1 because want the back to face the cam. not the front
