@@ -81,7 +81,6 @@ public class WildlifeBehaviour : MonoBehaviour
             }
     }
     void chaseTarget() {
-        transform.LookAt(Target); //make the object turn towards the target
         GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed); //makes thecreature run after the target
         animator.SetBool("Walking", true); //turn on walking animation
         animator.SetBool("Standing", false); //turn off standing animation
