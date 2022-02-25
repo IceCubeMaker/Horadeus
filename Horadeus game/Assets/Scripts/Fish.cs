@@ -35,29 +35,26 @@ public class Fish : Entity{
     void OnCollisionEnter(Collision collision) {
         if(collision.gameObject.name == "Arrow(Clone)"){
             Debug.Log("Arrow hit");
-            isDead = true;
+            Die(); //Kill fish :c
         }
+    }
+    private void Die() //Set death state
+    {
+        isDead = true;
+        anim.SetBool("isDead", true); //Set death animations
+        rb.velocity = Vector3.zero; //Cause it to lose any velocity so it falls down straight
+        rb.angularVelocity = Vector3.zero; //Set rotation speed to zero
+        rb.useGravity = true; //Allow gravity to affect it
+        agent.enabled = false; //Stop NavMeshAgent
     }
 
 
     private void Update()
     {
-
         if (isDead == false) 
         {
             FindRandomSpot();
         }
-        else
-        {
-            if (agent.enabled == true) { //make sure is only called once.
-            anim.SetBool("isDead", true);
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            rb.useGravity = true;
-            agent.enabled = false;
-            }
-        }
-        
     }
     #endregion
 
