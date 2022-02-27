@@ -55,13 +55,13 @@ public class Fish : Entity{
 
     private void Update()
     {
-        if (isDead){ return; } 
-        FindRandomSpot();
+        if (isDead){ return; } //Don't run code if in death state
+        FindRandomSpot(); //If Possible find and move to different moveToSpot positions
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmos()//Draws Gizmos if enabled in editor
     {
-        Gizmos.DrawWireSphere(transform.position, findNextSpotDist);
+        Gizmos.DrawWireSphere(transform.position, findNextSpotDist); //Draw a Wireframe Sphere around fish to show findNestSpotDist
     }
 
     #endregion
@@ -75,12 +75,21 @@ public class Fish : Entity{
         if (moveToSpots.Length == 0) { return; } //Exit if no spots
 
         //Find position if not following one or if distance is lower than findNextSpotDist
-        if (currentTarget == -1 || Vector3.Distance(transform.position, moveToSpots[currentTarget].transform.position)<=findNextSpotDist)
+        if (currentTarget == -1 || Vector3.Distance(transform.position, moveToSpots[currentTarget].transform.position) <= findNextSpotDist)
         {
-            currentTarget = UnityEngine.Random.Range(0, moveToSpots.Length);
+            currentTarget = UnityEngine.Random.Range(0, moveToSpots.Length); //Set new target
         }
+
+        //-------------------------------Movement Code--------------------------------------
+
+        //Adds velocity towards the target to move to it
         rb.velocity = ((moveToSpots[currentTarget].transform.position-transform.position).normalized * moveForce * Time.deltaTime);
+
+        //Makes fish face the target slowly
         transform.forward = Vector3.Lerp(transform.forward, rb.velocity.normalized, 0.8f * Time.deltaTime*10).normalized;
+
+        //----------------------------------------------------------------------------------
+
     }
 
     #endregion
