@@ -7,6 +7,10 @@ using UnityEngine.AI;
 public class Fish : Entity{
 
     #region Variables
+    public float moveForce = 10;
+    public float findNextSpotDist = 1;
+    private int currentTarget = -1;
+
     private Animator anim;
     public Rigidbody rb;
     public NavMeshAgent agent;
@@ -26,8 +30,8 @@ public class Fish : Entity{
         anim = this.gameObject.GetComponent<Animator>();
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         moveToSpots = GameObject.FindGameObjectsWithTag("FishNavLocation");//GameObject In Hierarchy
-        agent.SetDestination(moveToSpots[rnd.Next(0,moveToSpots.Length)].transform.position);
-        agent.baseOffset = rnd.Next(1, 10); //Increase or lower to adjust hight fish fly
+        //agent.SetDestination(moveToSpots[rnd.Next(0,moveToSpots.Length)].transform.position);
+        //agent.baseOffset = rnd.Next(1, 10); //Increase or lower to adjust hight fish fly
     }
 
 
@@ -51,11 +55,15 @@ public class Fish : Entity{
 
     private void Update()
     {
-        if (isDead == false) 
-        {
-            FindRandomSpot();
-        }
+        if (isDead){ return; } 
+        FindRandomSpot();
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, findNextSpotDist);
+    }
+
     #endregion
 
     #region Custom Methods
@@ -64,17 +72,16 @@ public class Fish : Entity{
     /// </summary>
     private void FindRandomSpot()
     {
-        if (agent.remainingDistance < 1)
+        if (moveToSpots.Length == 0) { return; } //Exit if no spots
+
+        //Find position if not following one or if distance is lower than findNextSpotDist
+        if (currentTarget == -1 || Vector3.Distance(transform.position, moveToSpots[currentTarget].transform.position)<=findNextSpotDist)
         {
-            if (moveToSpots != null)
-            {
-                agent.SetDestination(moveToSpots[rnd.Next(0, moveToSpots.Length)].transform.position);
-            }
+            currentTarget = UnityEngine.Random.Range(0, moveToSpots.Length);
         }
-
+        rb.velocity = ((moveToSpots[currentTarget].transform.position-transform.position).normalized * moveForce * Time.deltaTime);
+        transform.forward = Vector3.Lerp(transform.forward, rb.velocity.normalized, 0.8f * Time.deltaTime*10).normalized;
     }
-
-
 
     #endregion
 }

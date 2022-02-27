@@ -133,6 +133,8 @@ MonoBehaviour:
   go: {fileID: 0}
   t: {fileID: 0}
   _subType: default
+  moveForce: 300
+  findNextSpotDist: 3
   rb: {fileID: 4337261559598316871}
   agent: {fileID: 4576514758096434501}
   moveToSpots: []
@@ -144,10 +146,10 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5905468494541245350}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
@@ -173,7 +175,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5905468494541245350}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
