@@ -7,6 +7,10 @@ using UnityEngine.AI;
 public class Fish : Entity{
 
     #region Variables
+    public float moveForce = 10;
+    public float findNextSpotDist = 1;
+    private int currentTarget = -1;
+
     private Animator anim;
     public Rigidbody rb;
     public NavMeshAgent agent;
@@ -26,8 +30,8 @@ public class Fish : Entity{
         anim = this.gameObject.GetComponent<Animator>();
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         moveToSpots = GameObject.FindGameObjectsWithTag("FishNavLocation");//GameObject In Hierarchy
-        agent.SetDestination(moveToSpots[rnd.Next(0,moveToSpots.Length)].transform.position);
-        agent.baseOffset = rnd.Next(1, 10); //Increase or lower to adjust hight fish fly
+        //agent.SetDestination(moveToSpots[rnd.Next(0,moveToSpots.Length)].transform.position);
+        //agent.baseOffset = rnd.Next(1, 10); //Increase or lower to adjust hight fish fly
     }
 
 
@@ -35,30 +39,31 @@ public class Fish : Entity{
     void OnCollisionEnter(Collision collision) {
         if(collision.gameObject.name == "Arrow(Clone)"){
             Debug.Log("Arrow hit");
-            isDead = true;
+            Die(); //Kill fish :c
         }
+    }
+    private void Die() //Set death state
+    {
+        isDead = true;
+        anim.SetBool("isDead", true); //Set death animations
+        rb.velocity = Vector3.zero; //Cause it to lose any velocity so it falls down straight
+        rb.angularVelocity = Vector3.zero; //Set rotation speed to zero
+        rb.useGravity = true; //Allow gravity to affect it
+        agent.enabled = false; //Stop NavMeshAgent
     }
 
 
     private void Update()
     {
-
-        if (isDead == false) 
-        {
-            FindRandomSpot();
-        }
-        else
-        {
-            if (agent.enabled == true) { //make sure is only called once.
-            anim.SetBool("isDead", true);
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            rb.useGravity = true;
-            agent.enabled = false;
-            }
-        }
-        
+        if (isDead){ return; } //Don't run code if in death state
+        FindRandomSpot(); //If Possible find and move to different moveToSpot positions
     }
+
+    private void OnDrawGizmos()//Draws Gizmos if enabled in editor
+    {
+        Gizmos.DrawWireSphere(transform.position, findNextSpotDist); //Draw a Wireframe Sphere around fish to show findNestSpotDist
+    }
+
     #endregion
 
     #region Custom Methods
@@ -67,17 +72,25 @@ public class Fish : Entity{
     /// </summary>
     private void FindRandomSpot()
     {
-        if (agent.remainingDistance < 1)
+        if (moveToSpots.Length == 0) { return; } //Exit if no spots
+
+        //Find position if not following one or if distance is lower than findNextSpotDist
+        if (currentTarget == -1 || Vector3.Distance(transform.position, moveToSpots[currentTarget].transform.position) <= findNextSpotDist)
         {
-            if (moveToSpots != null)
-            {
-                agent.SetDestination(moveToSpots[rnd.Next(0, moveToSpots.Length)].transform.position);
-            }
+            currentTarget = UnityEngine.Random.Range(0, moveToSpots.Length); //Set new target
         }
 
+        //-------------------------------Movement Code--------------------------------------
+
+        //Adds velocity towards the target to move to it
+        rb.velocity = ((moveToSpots[currentTarget].transform.position-transform.position).normalized * moveForce * Time.deltaTime);
+
+        //Makes fish face the target slowly
+        transform.forward = Vector3.Lerp(transform.forward, rb.velocity.normalized, 0.8f * Time.deltaTime*10).normalized;
+
+        //----------------------------------------------------------------------------------
+
     }
-
-
 
     #endregion
 }
