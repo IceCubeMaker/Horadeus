@@ -7,6 +7,7 @@ public class WildlifeBehaviour : MonoBehaviour
 //---------------------------------------Input---------------------------------------------
     [Header("Stats")]
     public int health; //Set the health stat 
+    public int totalHealth;
     public int defense; //Set the defense stat
     public int damageFromArrows; //this should later be changed, so that it automatically takes the damage that is assigned to the arrow it gets hit by
     public int moveSpeed; //Set speed stat
@@ -18,7 +19,7 @@ public class WildlifeBehaviour : MonoBehaviour
     public Transform Target; //this is the target the player is supposed to follow
     private float dist; //dist = distance ; it is the distance towards the target
     public float sightRadius; //if you enter this radius, the enemy will follow you
-    
+
     [Header("Others")]
     public Animator animator; //here you put in the animation of the object this script is attached to
     public bool dontTakeDamage; //Makes it impossible for this entity to take any damage
