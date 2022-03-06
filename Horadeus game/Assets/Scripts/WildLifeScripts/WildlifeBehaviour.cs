@@ -7,18 +7,21 @@ public class WildlifeBehaviour : MonoBehaviour
 //---------------------------------------Input---------------------------------------------
     [Header("Stats")]
     public int health; //Set the health stat 
+    public int totalHealth;
     public int defense; //Set the defense stat
+    public int attackDamage;
     public int damageFromArrows; //this should later be changed, so that it automatically takes the damage that is assigned to the arrow it gets hit by
     public int moveSpeed; //Set speed stat
 
     [Header("Chase Target")]
+    public bool attackPlayer; //should entity attack player
     public bool alwaysChaseTarget; //enable/disable chasing a target
     public bool chaseWhenAttacked; //if this is enabled the snowman will start following the player once they attack them
     public bool chaseWhenInRange; //if this is disabled the creature will follow the player no matter where they are
     public Transform Target; //this is the target the player is supposed to follow
     private float dist; //dist = distance ; it is the distance towards the target
     public float sightRadius; //if you enter this radius, the enemy will follow you
-    
+
     [Header("Others")]
     public Animator animator; //here you put in the animation of the object this script is attached to
     public bool dontTakeDamage; //Makes it impossible for this entity to take any damage
@@ -38,19 +41,26 @@ public class WildlifeBehaviour : MonoBehaviour
     }
 
 
-//----------------------------------Take Damage Script-------------------------------------
+//----------------------------------Take Damage Script/Attack Player----------------------------
     
     void OnCollisionEnter(Collision collision) { //if an arrow hits the entity
-        if (collision.gameObject.tag == "Damager") { //check if the collision object has the tag "damager"
+        if (collision.gameObject.CompareTag("Damager")) { //check if the collision object has the tag "damager"
             if (!dontTakeDamage) { //if the entity can take damage
                     damageCounter = damageFromArrows; //replace this with the damage that is assigned to the arrow itself
                     if (chaseWhenAttacked) { //if this is enabled the entity will now start chasing the target
-                        alwaysChaseTarget = true;
-                    }
+                    alwaysChaseTarget = true;
                 }
-                health = health - (damageCounter / defense); //put damage
             }
-       }
+            health = health - (damageCounter / defense); //put damage
+        }
+
+//---------------------------------------- Attack Player -----------------------------
+
+        if (attackPlayer==true && collision.gameObject.CompareTag("Player")) //check if collision object is player
+        {
+            Game.inst.player.HurtPlayer(attackDamage); //damage the player
+        }
+   }
 
 //-----------------------------------Death Script------------------------------------------
     void Update() // Update is called once per frame

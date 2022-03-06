@@ -12,6 +12,10 @@ public class Player : MonoBehaviour {
 
     private ItemData arrowItem;
 
+    [Header("PlayerStats")]
+    public float playerHealth = 100;
+
+
     [HideInInspector] public HCamera playerCamera;
 
     public void Init(HCamera cam) {
@@ -99,6 +103,15 @@ public class Player : MonoBehaviour {
         } else {
             Cursor.lockState = CursorLockMode.Locked;
         }
+    }
+
+    public void HealPlayer(float toheal)
+    {
+        HurtPlayer(-toheal);
+    }
+    public void HurtPlayer(float damaged)
+    {
+        playerHealth -= damaged;
     }
 
 }
