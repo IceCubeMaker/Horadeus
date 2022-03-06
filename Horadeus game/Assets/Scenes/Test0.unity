@@ -8133,7 +8133,7 @@ MonoBehaviour:
   chaseWhenInRange: 0
   Target: {fileID: 168420920}
   sightRadius: 12
-  animator: {fileID: 0}
+  animator: {fileID: 1244728226}
   dontTakeDamage: 1
 --- !u!4 &1257894989 stripped
 Transform:
