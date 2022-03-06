@@ -105,7 +105,11 @@ public class Player : MonoBehaviour {
         }
     }
 
-    public void HurtPlayer(int damaged)
+    public void HealPlayer(float toheal)
+    {
+        HurtPlayer(-toheal);
+    }
+    public void HurtPlayer(float damaged)
     {
         playerHealth -= damaged;
     }

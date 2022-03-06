@@ -10,6 +10,7 @@ public class Fish : Entity{
     public float moveForce = 10;
     public float findNextSpotDist = 1;
     private int currentTarget = -1;
+    public float healvalue = 20;
 
     private Animator anim;
     public Rigidbody rb;
@@ -40,6 +41,11 @@ public class Fish : Entity{
         if(collision.gameObject.name == "Arrow(Clone)"){
             Debug.Log("Arrow hit");
             Die(); //Kill fish :c
+        }
+        if(isDead && collision.gameObject.CompareTag("Player"))
+        {
+            Game.inst.player.HealPlayer(healvalue);
+            Destroy(this.gameObject);
         }
     }
     private void Die() //Set death state
