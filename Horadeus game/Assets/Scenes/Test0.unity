@@ -643,8 +643,10 @@ MonoBehaviour:
   health: 100
   totalHealth: 100
   defense: 5
+  attackDamage: 10
   damageFromArrows: 50
   moveSpeed: 11
+  attackPlayer: 1
   alwaysChaseTarget: 0
   chaseWhenAttacked: 1
   chaseWhenInRange: 1
@@ -7159,7 +7161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8264913601700730944, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8264913601700731006, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
       propertyPath: bow
@@ -7777,8 +7779,10 @@ MonoBehaviour:
   health: 100
   totalHealth: 0
   defense: 1
+  attackDamage: 0
   damageFromArrows: 20
   moveSpeed: 10
+  attackPlayer: 0
   alwaysChaseTarget: 0
   chaseWhenAttacked: 1
   chaseWhenInRange: 0
@@ -8126,8 +8130,10 @@ MonoBehaviour:
   health: 100
   totalHealth: 100
   defense: 4
+  attackDamage: 0
   damageFromArrows: 50
   moveSpeed: 11
+  attackPlayer: 0
   alwaysChaseTarget: 0
   chaseWhenAttacked: 0
   chaseWhenInRange: 0

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class HealthBarHUD : MonoBehaviour
 {
     #region Variables
-    float playerHealth = 100;
     private GameObject healthBarSlider; //GameObject Then Grab the Slider Component
     private float timer = 0; // This is so you can lose health over time.
     [Header("How Fast Do You lose health over time")]
@@ -18,7 +17,7 @@ public class HealthBarHUD : MonoBehaviour
     void Start()
     {
         healthBarSlider = GameObject.Find("HealthBar");
-        healthBarSlider.GetComponent<Slider>().value = playerHealth;
+        healthBarSlider.GetComponent<Slider>().value = Game.inst.player.playerHealth;
     }
 
     // Update is called once per frame
@@ -37,10 +36,10 @@ public class HealthBarHUD : MonoBehaviour
     private void LoseHealthTimer()
     {
         timer += Time.deltaTime;
-        healthBarSlider.GetComponent<Slider>().value = playerHealth;
+        healthBarSlider.GetComponent<Slider>().value = Game.inst.player.playerHealth;
         if (timer >= waitTime)
         {
-            playerHealth -= 10;
+            Game.inst.player.playerHealth-= 10;
             timer -= waitTime;
         }
     }
