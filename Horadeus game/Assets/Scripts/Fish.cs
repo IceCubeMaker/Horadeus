@@ -42,10 +42,11 @@ public class Fish : Entity{
             Debug.Log("Arrow hit");
             Die(); //Kill fish :c
         }
-        if(isDead && collision.gameObject.CompareTag("Player"))
+
+        if(isDead && collision.gameObject.CompareTag("Player")) //check if fish dead and player hit object
         {
-            Game.inst.player.HealPlayer(healvalue);
-            Destroy(this.gameObject);
+            Game.inst.player.HealPlayer(healvalue); //heal player
+            Destroy(this.gameObject); //make fish go byebye
         }
     }
     private void Die() //Set death state

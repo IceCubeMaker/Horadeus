@@ -54,10 +54,11 @@ public class WildlifeBehaviour : MonoBehaviour
             health = health - (damageCounter / defense); //put damage
         }
 
-        //----------------------------- Attack Player --------------------------
+//---------------------------------------- Attack Player -----------------------------
+
         if (attackPlayer==true && collision.gameObject.CompareTag("Player")) //check if collision object is player
         {
-            collision.gameObject.GetComponentInParent<Player>().HurtPlayer(attackDamage);
+            Game.inst.player.HurtPlayer(attackDamage); //damage the player
         }
    }
 
