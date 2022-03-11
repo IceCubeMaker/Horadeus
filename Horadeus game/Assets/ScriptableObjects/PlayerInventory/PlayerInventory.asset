@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8102cbb879b317a47ad5cba8f65fcdf9, type: 3}
+  m_Script: {fileID: 11500000, guid: 76abdca20e4751948b7fbcd4797df914, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  items:
-  - type: 1
-    count: 49
-  itemsInfo: []
-  OnInventoryChanged: {fileID: 11400000, guid: f5d2e2b263f49c542ad3c177dc4bf7b1, type: 2}
+  items: []

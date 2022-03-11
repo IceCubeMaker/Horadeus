@@ -6,6 +6,7 @@ using TMPro;
 public class Player : MonoBehaviour {
 
     public SO_PlayerInventory inventory;
+    public PlayerInventory playerInventory;
     public Weapon currentWeapon;
 
     public PlayerMovement movement;
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour {
     private ItemData arrowItem;
 
     [Header("PlayerStats")]
+    public float playerHealthMax = 100;
     public float playerHealth = 100;
 
 
