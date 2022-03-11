@@ -91,7 +91,7 @@ public class WildlifeBehaviour : MonoBehaviour
             }
     }
     void chaseTarget() {
-        GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed); //makes thecreature run after the target
+        GetComponent<Rigidbody>().AddForce(-(transform.forward * moveSpeed)); //makes the creature run after the target
         animator.SetBool("Walking", true); //turn on walking animation
         animator.SetBool("Standing", false); //turn off standing animation
     }

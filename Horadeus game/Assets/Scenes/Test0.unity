@@ -710,7 +710,7 @@ MonoBehaviour:
   health: 100
   totalHealth: 100
   defense: 5
-  attackDamage: 10
+  attackDamage: 50
   damageFromArrows: 50
   moveSpeed: 11
   attackPlayer: 1
