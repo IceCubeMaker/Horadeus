@@ -13,6 +13,9 @@ public class GameUI : MonoBehaviour
     public Image NoAmoSignImage;
     public Animator crosshairAnimator;
 
+    public GameObject hotbar;
+    public GameObject hotbarSlot;
+
     public void Init() {
         inst = this;
     }
@@ -37,6 +40,24 @@ public class GameUI : MonoBehaviour
 
     public void EnableNoAmoSign(bool enable) { //This is a function gets triggered in a different script
         NoAmoSignImage.enabled = enable; //Show a red "!" sign on screen when the player is out of amo
+    }
+
+    public void UpdateHotbar() // Update Hotbar for player
+    {
+        if (!hotbar) { return; } //Returns if hotbar doesn't exist
+
+        //Deactivate Hotbar slots
+        for(int i = 0; i<hotbar.transform.childCount; ++i)
+        {
+            hotbar.transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        //Reactivate Hotbar Slots
+        for (int i = 0; i < Game.inst.player.playerInventory.items.Count; ++i)
+        {
+            hotbar.transform.GetChild(i).gameObject.SetActive(true);
+            hotbar.transform.GetChild(i).GetComponentInChildren<Image>().sprite = Game.inst.player.playerInventory.items[i].invItem.itemImage;
+        }
     }
 
 }

@@ -11,6 +11,7 @@ public class Fish : Entity{
     public float findNextSpotDist = 1;
     private int currentTarget = -1;
     public float healvalue = 20;
+    public InventoryItem itemdrop;
 
     private Animator anim;
     public Rigidbody rb;
@@ -45,7 +46,16 @@ public class Fish : Entity{
 
         if(isDead && collision.gameObject.CompareTag("Player")) //check if fish dead and player hit object
         {
-            Game.inst.player.HealPlayer(healvalue); //heal player
+
+            // Add fish to inventory if Health is higher than heal
+            if (Game.inst.player.playerHealth + healvalue > Game.inst.player.playerHealthMax)
+            {
+                Game.inst.player.playerInventory.AddItem(Instantiate(itemdrop), 1); //adding fish to player inventory
+            }
+            else
+            {
+                Game.inst.player.HealPlayer(healvalue); //heal player
+            }
             Destroy(this.gameObject); //make fish go byebye
         }
     }

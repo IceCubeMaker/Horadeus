@@ -135,6 +135,8 @@ MonoBehaviour:
   _subType: default
   moveForce: 300
   findNextSpotDist: 3
+  healvalue: 20
+  itemdrop: {fileID: 11400000, guid: bd6416b03eb5fcd4e8ef0ca805956fb6, type: 2}
   rb: {fileID: 4337261559598316871}
   agent: {fileID: 4576514758096434501}
   moveToSpots: []
