@@ -28,6 +28,7 @@ public class WildlifeBehaviour : MonoBehaviour
 
 //---------------------------------private values------------------------------------------
     private int damageCounter; //this variable will be used to calculate how much damage the entity takes
+    private BillboardEffect billEff;
     
 //--------------------------------Before first frame---------------------------------------
     void Start() 
@@ -38,6 +39,7 @@ public class WildlifeBehaviour : MonoBehaviour
         if (health <= 0) { //if health is below 0 or equal
             health = 1; //default the health variable to 1, to prevent any bugs or complications
         }
+        billEff = GetComponent<BillboardEffect>();
     }
 
 
@@ -94,5 +96,6 @@ public class WildlifeBehaviour : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(-(transform.forward * moveSpeed)); //makes the creature run after the target
         animator.SetBool("Walking", true); //turn on walking animation
         animator.SetBool("Standing", false); //turn off standing animation
+        billEff.yStartRotation = transform.eulerAngles.y;
     }
 }

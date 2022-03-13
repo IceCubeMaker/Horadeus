@@ -15,7 +15,7 @@ public class BillboardEffect : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
 
-    float yStartRotation;
+    public float yStartRotation;
     int FrontBackLeftRight = 1;
 
     Vector3 Scale;
@@ -75,7 +75,7 @@ public class BillboardEffect : MonoBehaviour
         }
         else if ((yImaginaryRotation < 315) & (yImaginaryRotation > 225))
         {
-            FrontBackLeftRight = 3;
+            FrontBackLeftRight = 4;
         }
 
         animator.SetInteger("Front,Back,Left,Right", FrontBackLeftRight);

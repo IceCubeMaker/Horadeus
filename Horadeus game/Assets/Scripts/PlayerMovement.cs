@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     private HCamera playerCamera;
 
+    private Vector3 lastm_Input = Vector3.zero;
+
     public void Init(HCamera cam)
     {
         this.playerCamera = cam;
@@ -62,10 +64,16 @@ public class PlayerMovement : MonoBehaviour
         m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Speed * Time.fixedDeltaTime); //move character
 
 
+        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        {
+            lastm_Input = m_Movement;
+        }
 
+        float imaginaryRot = Vector3.SignedAngle(lastm_Input ,transform.forward, transform.up)+180;
+    
+        animator.SetFloat("RotAngle", imaginaryRot);
+        animator.SetFloat("Speed", m_Movement.sqrMagnitude);
 
-        animator.SetFloat("Foward/Backward", m_Input.z); //if > 0: foward, if < 0: backward
-        animator.SetFloat("Left/Right", m_Input.x); //if > 0: right, if < 0: left
     }
 
     // Returns whether or not the given position is in the game window

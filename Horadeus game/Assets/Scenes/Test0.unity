@@ -665,6 +665,7 @@ MonoBehaviour:
   faceCamSpeed: 0.1
   cam: {fileID: 963194228}
   animator: {fileID: 140737724}
+  yStartRotation: 0
 --- !u!54 &140737726
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7222,6 +7223,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8264913601521831300, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: m_Size.x
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264913601521831300, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: m_Size.y
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264913601521831300, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1790845275025858903, guid: 674f404ac8cc6df45824607c39459658, type: 3}
+    - target: {fileID: 8264913601521831300, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264913601521831300, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264913601521831300, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5e3f5805bf6eec84fad4daec8c3397d2, type: 2}
@@ -7307,6 +7328,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8264913601700731007, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264913603181096242, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8264913603181096242, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
@@ -7816,6 +7841,7 @@ MonoBehaviour:
   faceCamSpeed: 0.1
   cam: {fileID: 963194228}
   animator: {fileID: 1062837582}
+  yStartRotation: 0
 --- !u!65 &1062837586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8130,6 +8156,7 @@ MonoBehaviour:
   faceCamSpeed: 0.1
   cam: {fileID: 963194228}
   animator: {fileID: 1244728226}
+  yStartRotation: 0
 --- !u!95 &1244728226
 Animator:
   serializedVersion: 3
