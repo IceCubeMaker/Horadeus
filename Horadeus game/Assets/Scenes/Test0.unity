@@ -681,7 +681,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!136 &140737727
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -712,6 +712,7 @@ MonoBehaviour:
   totalHealth: 100
   defense: 5
   attackDamage: 50
+  knockbackForce: 800
   damageFromArrows: 50
   moveSpeed: 11
   attackPlayer: 1
@@ -7218,6 +7219,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8264913601521831298, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8264913601521831299, guid: 2f3938e12ea36b547b2cf2854da82a04, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -7887,6 +7892,7 @@ MonoBehaviour:
   totalHealth: 0
   defense: 1
   attackDamage: 0
+  knockbackForce: 0
   damageFromArrows: 20
   moveSpeed: 10
   attackPlayer: 0
@@ -8243,6 +8249,7 @@ MonoBehaviour:
   totalHealth: 100
   defense: 4
   attackDamage: 0
+  knockbackForce: 0
   damageFromArrows: 50
   moveSpeed: 11
   attackPlayer: 0

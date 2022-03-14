@@ -10,6 +10,7 @@ public class WildlifeBehaviour : MonoBehaviour
     public int totalHealth;
     public int defense; //Set the defense stat
     public int attackDamage;
+    public float knockbackForce; //Set attack knockback force
     public int damageFromArrows; //this should later be changed, so that it automatically takes the damage that is assigned to the arrow it gets hit by
     public int moveSpeed; //Set speed stat
 
@@ -61,6 +62,8 @@ public class WildlifeBehaviour : MonoBehaviour
         if (attackPlayer==true && collision.gameObject.CompareTag("Player")) //check if collision object is player
         {
             Game.inst.player.HurtPlayer(attackDamage); //damage the player
+            //Add knockback force to player
+            Game.inst.player.movement.GetComponent<Rigidbody>().AddForce((Game.inst.player.movement.transform.position-transform.position).normalized*knockbackForce);
         }
    }
 
