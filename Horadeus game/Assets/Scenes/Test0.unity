@@ -12851,7 +12851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  totalHealth: 0
+  totalHealth: 100
   defense: 1
   attackDamage: 0
   knockbackForce: 0
