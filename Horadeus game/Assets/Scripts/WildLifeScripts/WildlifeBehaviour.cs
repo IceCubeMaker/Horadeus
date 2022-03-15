@@ -26,6 +26,7 @@ public class WildlifeBehaviour : MonoBehaviour
     [Header("Others")]
     public Animator animator; //here you put in the animation of the object this script is attached to
     public bool dontTakeDamage; //Makes it impossible for this entity to take any damage
+    public ParticleSystem damagedParticles;
 
 //---------------------------------private values------------------------------------------
     private int damageCounter; //this variable will be used to calculate how much damage the entity takes
@@ -54,6 +55,7 @@ public class WildlifeBehaviour : MonoBehaviour
                     alwaysChaseTarget = true;
                 }
             }
+            DamageEffect(); //play effects for being damaged
             health = health - (damageCounter / defense); //put damage
         }
 
@@ -100,5 +102,14 @@ public class WildlifeBehaviour : MonoBehaviour
         animator.SetBool("Walking", true); //turn on walking animation
         animator.SetBool("Standing", false); //turn off standing animation
         billEff.yStartRotation = transform.eulerAngles.y;
+    }
+
+    public virtual void DamageEffect() //effects for being damaged, can be overrided
+    {
+        animator.SetTrigger("Damaged"); //play damaged animations
+        if (damagedParticles) //check if hurt particles exist and play them
+        {
+            damagedParticles.Play();
+        }
     }
 }
