@@ -15,6 +15,8 @@ public class HCamera : MonoBehaviour
     private float rotX, rotY; //X,Y Variables for Camera rotation
     private Vector2 currerntOffsetInPlane;
     private Vector2 targetOffsetInPlane;
+    private float currentForwardZoom = 0;
+    private float targetForwardZoom = 0;
     private float targetFov; //Change Fov to this value every update
 
     private Vector3 targetCamPos;
@@ -120,6 +122,7 @@ public class HCamera : MonoBehaviour
         //-------------------------------------- Anti-clipping END --------------------------------------------------------
 
         targetCamPos = camPos; //Setting targetCamPos to use for interpolation if needed
+        currentForwardZoom = Mathf.Lerp(currentForwardZoom, targetForwardZoom, 3 * Time.deltaTime);
 
         if (config.usePositionSmooth) //Checks if smoothing should be applied
         {
@@ -128,6 +131,7 @@ public class HCamera : MonoBehaviour
         {
             cameraTransform.position = targetCamPos; //Directly sets new position
         }
+        cameraTransform.position += transform.forward * currentForwardZoom;
     }
 
     /// <summary>
@@ -149,6 +153,11 @@ public class HCamera : MonoBehaviour
         if (instant) {
             cameraComponent.fieldOfView = targetFov;
         }
+    }
+
+    public void SetForwardZoom(float zoom)
+    {
+        targetForwardZoom = zoom;
     }
 
 }
