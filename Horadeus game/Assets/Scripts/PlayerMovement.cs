@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 lookPos = (playerCamera.cameraTransform.position - transform.position) * -1; //-1 because want the back to face the cam. not the front
         lookPos.y = 0;
         Quaternion rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, faceCamSpeed);
+        transform.rotation = Quaternion.LookRotation(lookPos);
         
         m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Speed * Time.fixedDeltaTime); //move character
 
