@@ -73,6 +73,16 @@ public class Player : MonoBehaviour {
                 GameUI.inst.EnableNoAmoSign(false); //make NoAmoSign invisible
                 
             }
+
+            if (Input.GetButtonDown("Fire2"))
+            {
+                playerCamera.SetForwardZoom(7f);
+
+            }
+            if (Input.GetButtonUp("Fire2"))
+            {
+                playerCamera.SetForwardZoom(0f);
+            }
         }
     }
 
