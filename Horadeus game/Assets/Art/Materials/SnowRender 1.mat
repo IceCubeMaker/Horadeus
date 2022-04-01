@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SnowRender 1
+  m_Shader: {fileID: 4800000, guid: 8c4accf21501c734fad3d0bfc32fd59a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DisplaceTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _InitDisplacement:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MGOE:
+        m_Texture: {fileID: 2800000, guid: 3bb1658cc33c21e41890dd088c5753a7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 26bacebeaf76b09468ec65b6ca49d838, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: b648892c14085634baa23163c88861f3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecMGOE:
+        m_Texture: {fileID: 2800000, guid: 96ca4acb4c25fc3418dfc68a9ec11480, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecTex:
+        m_Texture: {fileID: 2800000, guid: 26bacebeaf76b09468ec65b6ca49d838, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _DisplacementIntensity: 0
+    - _EmiMul: 0
+    - _FlattenBotNM: 0
+    - _FlattenNM: 0.836
+    - _FlattenTopNM: 0
+    - _Glossiness: 0.5
+    - _MaxTess: 10.3
+    - _Metallic: 0
+    - _MinTess: 1
+    - _SampleDist: 0.005
+    - _Scale: 1
+    - _SnowMaxHeight: 1
+    - _maxDist: 0
+    - _minDist: 0
+    m_Colors:
+    - _BotColor: {r: 1, g: 0.6, b: 0, a: 1}
+    - _Color: {r: 1.542, g: 1.542, b: 1.542, a: 1}
+    - _EmiCol: {r: 1, g: 1, b: 1, a: 1}
+    - _SampleDist: {r: 2, g: 0.1, b: 2, a: 0.1}
+  m_BuildTextureStacks: []
