@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8241666926274181471}
   - component: {fileID: 3941833898765877683}
   - component: {fileID: 6067763540614858002}
+  - component: {fileID: 9125797484975531296}
   m_Layer: 0
   m_Name: floe.011
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9125797484975531296
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337602936979128602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8470049373670364707, guid: d97690d43e1b27b47b644c6d78f9a2f1, type: 3}
 --- !u!1 &4668397346351433436
 GameObject:
   m_ObjectHideFlags: 0
