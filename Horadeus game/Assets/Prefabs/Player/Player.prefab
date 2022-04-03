@@ -347,8 +347,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+  playerInventory: {fileID: 0}
   currentWeapon: {fileID: 0}
   movement: {fileID: 8264913601521831358}
+  playerHealthMax: 100
+  playerHealth: 100
   playerCamera: {fileID: 0}
 --- !u!82 &9188797628822824874
 AudioSource:
