@@ -588,9 +588,9 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   master:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value:
-      <length>k__BackingField: 2
+      <length>k__BackingField: 3
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -601,6 +601,15 @@ MonoBehaviour:
           time: 0
           value: 0
           inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.7442396
+          value: 0.92753625
+          inSlope: 1
           outSlope: 1
           tangentMode: 0
           weightedMode: 0
@@ -621,7 +630,7 @@ MonoBehaviour:
   red:
     m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 2
+      <length>k__BackingField: 3
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -632,6 +641,15 @@ MonoBehaviour:
           time: 0
           value: 0
           inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.7764977
+          value: 0.8164251
+          inSlope: 1
           outSlope: 1
           tangentMode: 0
           weightedMode: 0
@@ -652,7 +670,7 @@ MonoBehaviour:
   green:
     m_OverrideState: 0
     m_Value:
-      <length>k__BackingField: 4
+      <length>k__BackingField: 3
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -663,6 +681,15 @@ MonoBehaviour:
           time: 0
           value: 0
           inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.79262674
+          value: 0.79262674
+          inSlope: 1
           outSlope: 1
           tangentMode: 0
           weightedMode: 0
@@ -681,7 +708,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
   blue:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value:
       <length>k__BackingField: 5
       m_Loop: 0
@@ -694,6 +721,33 @@ MonoBehaviour:
           time: 0
           value: 0
           inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.25115207
+          value: 0.2753623
+          inSlope: 1.0101253
+          outSlope: 1.0101253
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.55069125
+          value: 0.5507246
+          inSlope: 0.8841867
+          outSlope: 0.8841867
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.78571427
+          value: 0.79227054
+          inSlope: 1
           outSlope: 1
           tangentMode: 0
           weightedMode: 0
@@ -785,7 +839,7 @@ MonoBehaviour:
   satVsSat:
     m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 2
+      <length>k__BackingField: 3
       m_Loop: 0
       m_ZeroValue: 0.5
       m_Range: 1
@@ -793,7 +847,7 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
+          time: 0.004608295
           value: 1
           inSlope: 0
           outSlope: 0
@@ -802,10 +856,19 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.9953917
-          value: 0.01449275
-          inSlope: -1.6518809
-          outSlope: -1.6518809
+          time: 0.39170507
+          value: 0.6714976
+          inSlope: -0.87643796
+          outSlope: -0.87643796
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0.23671496
+          inSlope: -0.20966186
+          outSlope: -0.20966186
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
