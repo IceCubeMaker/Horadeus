@@ -10,7 +10,7 @@ Material:
   m_Name: EmissionYellowMat
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
@@ -97,7 +97,7 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0.491
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -106,9 +106,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.6544118, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 0, b: 0.8956456, a: 1}
     - _Color: {r: 1, g: 0.6544118, b: 0, a: 1}
-    - _EmissionColor: {r: 11.984314, g: 7.2156863, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 3.2790923, b: 11.984314, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &690726279580364777
