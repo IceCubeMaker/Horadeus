@@ -17,6 +17,8 @@ public class Player : MonoBehaviour {
     public float playerHealthMax = 100;
     public float playerHealth = 100;
 
+    public float temperature = 0f;
+    public float coldDamage = 0.1f;
 
     [HideInInspector] public HCamera playerCamera;
 
@@ -84,6 +86,7 @@ public class Player : MonoBehaviour {
                 playerCamera.SetForwardZoom(0f);
             }
         }
+        TemperatureChecks();
     }
 
     private void SomeCursorCheck()
@@ -124,6 +127,18 @@ public class Player : MonoBehaviour {
     public void HurtPlayer(float damaged)
     {
         playerHealth -= damaged;
+        if (playerHealth < 0) { Game.inst.Death(); }
+    }
+
+    private void TemperatureChecks()
+    {
+        if (temperature <= 5)
+        {
+            HurtPlayer(coldDamage * Time.deltaTime);
+        }else if(temperature >= 15)
+        {
+            HealPlayer(coldDamage * 15 * Time.deltaTime);
+        }
     }
 
 }
