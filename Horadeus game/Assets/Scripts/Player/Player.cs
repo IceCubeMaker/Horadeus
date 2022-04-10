@@ -123,11 +123,12 @@ public class Player : MonoBehaviour {
     public void HealPlayer(float toheal)
     {
         HurtPlayer(-toheal);
+        Mathf.Clamp(playerHealth, 0, playerHealthMax);
     }
     public void HurtPlayer(float damaged)
     {
         playerHealth -= damaged;
-        if (playerHealth < 0) { Game.inst.Death(); }
+        if (playerHealth <= 0) { Game.inst.Death(); }
     }
 
     private void TemperatureChecks()

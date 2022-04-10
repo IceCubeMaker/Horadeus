@@ -17,7 +17,7 @@ public class TemperatureOutput : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position, radius);
     }
-    private void OnDisable()
+    public void OnDisable()
     {
         Game.inst.player.temperature -= prevTemp;
         prevTemp = 0;
