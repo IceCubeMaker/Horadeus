@@ -11,6 +11,9 @@ public class Game : Singleton<Game> {
 	public Player player;
     public Map map;
 
+	public GameObject respawnPlace;
+	public Interactable toInteract;
+
 	public override void Init()
 	{
 
@@ -50,6 +53,7 @@ public class Game : Singleton<Game> {
 		player.InternalUpdate();
 		map.InternalUpdate();
 		mainCamera.InternalUpdate();
+		InteractCheck();
 	}
 
 	private void InternalFixedUpdate()
@@ -62,4 +66,16 @@ public class Game : Singleton<Game> {
 		HSceneManager.ReloadScene();
 	}
 
+	public void Death()
+    {
+		player.playerHealth = player.playerHealthMax;
+		player.movement.transform.position = respawnPlace.transform.position;
+    }
+	private void InteractCheck()
+    {
+		if (toInteract && Input.GetButtonDown("Interact"))
+		{
+			toInteract.interactActions.Invoke();
+		}
+    }
 }

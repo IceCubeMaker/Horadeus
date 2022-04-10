@@ -16,6 +16,8 @@ public class GameUI : MonoBehaviour
     public GameObject hotbar;
     public GameObject hotbarSlot;
 
+    public GameObject interactableUI;
+
     public void Init() {
         inst = this;
     }
@@ -58,6 +60,11 @@ public class GameUI : MonoBehaviour
             hotbar.transform.GetChild(i).gameObject.SetActive(true);
             hotbar.transform.GetChild(i).GetComponentInChildren<Image>().sprite = Game.inst.player.playerInventory.items[i].invItem.itemImage;
         }
+    }
+
+    public void CanInteract(bool tostate)
+    {
+        interactableUI.SetActive(tostate);
     }
 
 }
