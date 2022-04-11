@@ -1,0 +1,1404 @@
+fileFormatVersion: 2
+guid: f66521702842b7b40b224fb244c88e3b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4988915125651185854
+    second: Arran Animation Sheet_0
+  - first:
+      213: -2541693212933195694
+    second: Arran Animation Sheet_1
+  - first:
+      213: 4141264300224727602
+    second: Arran Animation Sheet_2
+  - first:
+      213: -1328957047961501797
+    second: Arran Animation Sheet_3
+  - first:
+      213: -7456654379734323193
+    second: Arran Animation Sheet_4
+  - first:
+      213: -1536899889554391145
+    second: Arran Animation Sheet_5
+  - first:
+      213: -3616313057838209427
+    second: Arran Animation Sheet_6
+  - first:
+      213: 7233549914437494454
+    second: Arran Animation Sheet_7
+  - first:
+      213: 2729482307628796791
+    second: Arran Animation Sheet_8
+  - first:
+      213: -4086319861148917195
+    second: Arran Animation Sheet_9
+  - first:
+      213: 5340270079063606610
+    second: Arran Animation Sheet_10
+  - first:
+      213: 5321395476404276168
+    second: Arran Animation Sheet_11
+  - first:
+      213: -7480823558264175800
+    second: Arran Animation Sheet_12
+  - first:
+      213: -6771434593590939248
+    second: Arran Animation Sheet_13
+  - first:
+      213: 4501565124711100459
+    second: Arran Animation Sheet_14
+  - first:
+      213: -7033163371238902466
+    second: Arran Animation Sheet_15
+  - first:
+      213: 2368350890334790962
+    second: Arran Animation Sheet_16
+  - first:
+      213: 4859975193923921651
+    second: Arran Animation Sheet_17
+  - first:
+      213: -4102797146965403582
+    second: Arran Animation Sheet_18
+  - first:
+      213: -1649423091673014424
+    second: Arran Animation Sheet_19
+  - first:
+      213: 5388420899578961069
+    second: Arran Animation Sheet_20
+  - first:
+      213: -3564619211705877216
+    second: Arran Animation Sheet_21
+  - first:
+      213: 6738150309274514376
+    second: Arran Animation Sheet_22
+  - first:
+      213: 2607336652676693846
+    second: Arran Animation Sheet_23
+  - first:
+      213: -4067503784134058922
+    second: Arran Animation Sheet_24
+  - first:
+      213: 311337589911445674
+    second: Arran Animation Sheet_25
+  - first:
+      213: 8788280262667845097
+    second: Arran Animation Sheet_26
+  - first:
+      213: 9025848064190409293
+    second: Arran Animation Sheet_27
+  - first:
+      213: 3640589611678195362
+    second: Arran Animation Sheet_28
+  - first:
+      213: -661595759463086384
+    second: Arran Animation Sheet_29
+  - first:
+      213: -1010863580533968165
+    second: Arran Animation Sheet_30
+  - first:
+      213: 7012489607949922161
+    second: Arran Animation Sheet_31
+  - first:
+      213: -612698909536393881
+    second: Arran Animation Sheet_32
+  - first:
+      213: -465323961682771123
+    second: Arran Animation Sheet_33
+  - first:
+      213: 5910060488379386817
+    second: Arran Animation Sheet_34
+  - first:
+      213: -9073354379570632613
+    second: Arran Animation Sheet_35
+  - first:
+      213: 5186173698674784673
+    second: Arran Animation Sheet_36
+  - first:
+      213: -8106054270850563585
+    second: Arran Animation Sheet_37
+  - first:
+      213: 5779117357605180794
+    second: Arran Animation Sheet_38
+  - first:
+      213: 3953835758809720489
+    second: Arran Animation Sheet_39
+  - first:
+      213: 2718610457141977230
+    second: Arran Animation Sheet_40
+  - first:
+      213: 5101331752036291140
+    second: Arran Animation Sheet_41
+  - first:
+      213: 82300966111845675
+    second: Arran Animation Sheet_42
+  - first:
+      213: 2135244227178012763
+    second: Arran Animation Sheet_43
+  - first:
+      213: -1412578211520252378
+    second: Arran Animation Sheet_44
+  - first:
+      213: 2739026737630491883
+    second: Arran Animation Sheet_45
+  - first:
+      213: 7368387273977183729
+    second: Arran Animation Sheet_46
+  - first:
+      213: 3459441124258863760
+    second: Arran Animation Sheet_47
+  - first:
+      213: 1465652400605573623
+    second: Arran Animation Sheet_48
+  - first:
+      213: 5835961139122863207
+    second: Arran Animation Sheet_49
+  - first:
+      213: 3274316619682554939
+    second: Arran Animation Sheet_50
+  - first:
+      213: 3092231496321082737
+    second: Arran Animation Sheet_51
+  - first:
+      213: -8811679207992655333
+    second: Arran Animation Sheet_52
+  - first:
+      213: 4021727340404649056
+    second: Arran Animation Sheet_53
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Arran Animation Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 520
+        width: 56
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24fdcf82020d3cab0800000000000000
+      internalID: -4988915125651185854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 520
+        width: 56
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25878134d771abcd0800000000000000
+      internalID: -2541693212933195694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 520
+        width: 56
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ac6ef80f9b87930800000000000000
+      internalID: 4141264300224727602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 520
+        width: 56
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fb0822b989e8de0800000000000000
+      internalID: -1328957047961501797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 520
+        width: 56
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70033134954a48890800000000000000
+      internalID: -7456654379734323193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 524
+        width: 56
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ff5cb71b5dbaae0800000000000000
+      internalID: -1536899889554391145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 520
+        width: 52
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6662f61f6640ddc0800000000000000
+      internalID: -3616313057838209427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 520
+        width: 52
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6aa1b725bb26460800000000000000
+      internalID: 7233549914437494454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 524
+        width: 56
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b8de682b111e520800000000000000
+      internalID: 2729482307628796791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 520
+        width: 60
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532689d8cb97a47c0800000000000000
+      internalID: -4086319861148917195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 520
+        width: 60
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255cb3bc7537c1a40800000000000000
+      internalID: 5340270079063606610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 392
+        width: 56
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb8278edf469d940800000000000000
+      internalID: 5321395476404276168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 392
+        width: 56
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8434a4edb96ce2890800000000000000
+      internalID: -7480823558264175800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 392
+        width: 56
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091783d1d180702a0800000000000000
+      internalID: -6771434593590939248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 392
+        width: 56
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2031bf61a5c87e30800000000000000
+      internalID: 4501565124711100459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 392
+        width: 56
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35340a5d2f256e90800000000000000
+      internalID: -7033163371238902466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 396
+        width: 56
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235a2e136921ed020800000000000000
+      internalID: 2368350890334790962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 392
+        width: 52
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6ab0b80b9127340800000000000000
+      internalID: 4859975193923921651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 392
+        width: 52
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24814ad7bbfef07c0800000000000000
+      internalID: -4102797146965403582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 396
+        width: 56
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86fd088ef621c19e0800000000000000
+      internalID: -1649423091673014424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 392
+        width: 60
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dacd1b3524487ca40800000000000000
+      internalID: 5388420899578961069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 392
+        width: 60
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02dfcbe86bde78ec0800000000000000
+      internalID: -3564619211705877216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 264
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3fe7b8108b28d50800000000000000
+      internalID: 6738150309274514376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 264
+        width: 64
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f76a01fde1f2420800000000000000
+      internalID: 2607336652676693846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 264
+        width: 64
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65cd120ebd25d87c0800000000000000
+      internalID: -4067503784134058922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 264
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0e5e373e7125400800000000000000
+      internalID: 311337589911445674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 264
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9edb4ea265e36f970800000000000000
+      internalID: 8788280262667845097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 264
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a67be4ef0424d70800000000000000
+      internalID: 9025848064190409293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 264
+        width: 64
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae5e0196f8f58230800000000000000
+      internalID: 3640589611678195362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 264
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d64c4c792a81d6f0800000000000000
+      internalID: -661595759463086384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 268
+        width: 64
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2b4e5ede0b8f1f0800000000000000
+      internalID: -1010863580533968165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 264
+        width: 64
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f29f8052e515160800000000000000
+      internalID: 7012489607949922161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 264
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76560d686914f77f0800000000000000
+      internalID: -612698909536393881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 136
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43cb6e7256da89f0800000000000000
+      internalID: -465323961682771123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 136
+        width: 64
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cbccea83b0c40250800000000000000
+      internalID: 5910060488379386817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 136
+        width: 64
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b582574b348f41280800000000000000
+      internalID: -9073354379570632613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 136
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9fbfc508df8f740800000000000000
+      internalID: 5186173698674784673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 136
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff10aef9692818f80800000000000000
+      internalID: -8106054270850563585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 136
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75d95f1e9c833050800000000000000
+      internalID: 5779117357605180794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 136
+        width: 64
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a62710aca8ded630800000000000000
+      internalID: 3953835758809720489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 136
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e802c949ec17ab520800000000000000
+      internalID: 2718610457141977230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 140
+        width: 64
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4425b8153329bc640800000000000000
+      internalID: 5101331752036291140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 136
+        width: 64
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d94c9ea44642100800000000000000
+      internalID: 82300966111845675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 136
+        width: 60
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5026a5cf49e1ad10800000000000000
+      internalID: 2135244227178012763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 8
+        width: 52
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626f0ecc993856ce0800000000000000
+      internalID: -1412578211520252378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 8
+        width: 52
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be433ce4e4af20620800000000000000
+      internalID: 2739026737630491883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 8
+        width: 52
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd3be0bf25c14660800000000000000
+      internalID: 7368387273977183729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 8
+        width: 52
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ad3d4af57620030800000000000000
+      internalID: 3459441124258863760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 8
+        width: 52
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f13b4ec71b075410800000000000000
+      internalID: 1465652400605573623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 8
+        width: 52
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76cf66c5cbf7df050800000000000000
+      internalID: 5835961139122863207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 12
+        width: 52
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3426561e95b07d20800000000000000
+      internalID: 3274316619682554939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 8
+        width: 52
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1752e7d9920d9ea20800000000000000
+      internalID: 3092231496321082737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 12
+        width: 52
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1207e45270a6b580800000000000000
+      internalID: -8811679207992655333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arran Animation Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 12
+        width: 52
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06cab4445bb00d730800000000000000
+      internalID: 4021727340404649056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 3905023bceb02a641b741b16e6fe7474
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
